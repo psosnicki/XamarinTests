@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AppXam.MarkupExtensions;assembly=AppXam"
+             xmlns:b="clr-namespace:Xamarin.Behaviors;assembly=Xamarin.Behaviors"
+             x:Class="AppXam.DocumentButton" x:Name="DocButton">
+  <ContentView.Resources>
+      
+  </ContentView.Resources>
+  <!--<Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />-->
+  <StackLayout Orientation="Horizontal">
+
+    <Image Source="{local:ImageResource AppXam.Images.success.png}" />
+    <StackLayout Orientation="Vertical">
+      <Label Text="{Binding DisplayName}"/>
+      <Label Text="Invoice"></Label>
+      <Label Text="27.03.01 2014 John Mone"></Label>
+    </StackLayout>
+    <Grid>
+      <Image Source="{local:ImageResource AppXam.Images.star_outline.png}" />
+      <Image IsVisible="{Binding IsFavorite,Mode=TwoWay}" Source="{local:ImageResource AppXam.Images.star_selected.png}">
+
+        <!--<b:Interaction.Behaviors>
+          <b:BehaviorCollection>
+            <b:EventToCommand CommandNameContext="{b:RelativeContext DocButton}"
+                  EventName="Clicked"
+                  CommandName="AddFavoriteCmd"
+                  CommandParameter="1" />
+          </b:BehaviorCollection>
+        </b:Interaction.Behaviors>-->
+
+        <!--<b:Interaction.Behaviors>
+          <b:BehaviorCollection>
+            <b:EventToCommand CommandNameContext="{b:RelativeContext DocButton}"
+                  EventName="Tapped"
+                  CommandName="AddFavoriteCmd" />
+          </b:BehaviorCollection>
+        </b:Interaction.Behaviors>-->
+        <Image.GestureRecognizers>
+          <TapGestureRecognizer Tapped="OnFavoriteTapped" />
+        </Image.GestureRecognizers>
+      </Image>
+    </Grid>
+  </StackLayout>
+</ContentView>

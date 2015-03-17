@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AppXam;assembly=AppXam"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             x:Class="AppXam.DocumentSearchView" x:Name="docSearchView">
+  
+  <ContentPage.Resources>
+      
+    
+  </ContentPage.Resources>
+  
+  
+  <!--<Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />-->
+  <StackLayout>
+    <controls:AutoCompleteView Placeholder="Enter text to search"
+                               ShowSearch="True"
+                              
+                               Suggestions="{Binding Suggestions,Mode=TwoWay}" >
+
+      <!--<controls:AutoCompleteView.SuggestionItemDataTemplate>
+        <DataTemplate>
+          <StackLayout>
+            <Label Text="{Binding Name}"/>
+          </StackLayout>
+        </DataTemplate>
+      </controls:AutoCompleteView.SuggestionItemDataTemplate>-->
+      
+    </controls:AutoCompleteView>
+    
+    <ListView x:Name="lvFoundDocs" ItemsSource="{Binding FoundDocuments}">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <ViewCell.View>
+                <local:DocumentButton/>
+            </ViewCell.View>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  </StackLayout>
+  
+</ContentPage>
