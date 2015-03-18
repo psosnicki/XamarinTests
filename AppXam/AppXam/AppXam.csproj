@@ -34,6 +34,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="AppNavigationService.cs" />
+    <Compile Include="BaseViewModel.cs" />
+    <Compile Include="Document.cs" />
     <Compile Include="DocumentButton.xaml.cs">
       <DependentUpon>DocumentButton.xaml</DependentUpon>
     </Compile>
@@ -41,7 +44,11 @@
       <DependentUpon>DocumentSearchView.xaml</DependentUpon>
     </Compile>
     <Compile Include="DocumentSearchViewModel.cs" />
+    <Compile Include="InfiniteListView.cs" />
     <Compile Include="LinearPage.cs" />
+    <Compile Include="LoginView.xaml.cs">
+      <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MarkupExtensions\ImageResourceExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Suggestion.cs" />
@@ -103,6 +110,11 @@
     <EmbeddedResource Include="Images\star_outline.png" />
     <EmbeddedResource Include="Images\star_selected.png" />
     <EmbeddedResource Include="Images\success.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="LoginView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.1.4.0.6341\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.1.4.0.6341\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />

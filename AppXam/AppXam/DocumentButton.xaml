@@ -17,8 +17,12 @@
       <Label Text="27.03.01 2014 John Mone"></Label>
     </StackLayout>
     <Grid>
-      <Image Source="{local:ImageResource AppXam.Images.star_outline.png}" />
-      <Image IsVisible="{Binding IsFavorite,Mode=TwoWay}" Source="{local:ImageResource AppXam.Images.star_selected.png}">
+      <Grid.GestureRecognizers>
+        <TapGestureRecognizer Tapped="OnFavoriteTapped" />
+      </Grid.GestureRecognizers>
+
+      <Image x:Name="imgStarOutline" Source="{local:ImageResource AppXam.Images.star_outline.png}" />
+      <Image x:Name="imgStarSelected" IsVisible="{Binding IsFavorite,Mode=TwoWay}" Source="{local:ImageResource AppXam.Images.star_selected.png}">
 
         <!--<b:Interaction.Behaviors>
           <b:BehaviorCollection>
@@ -36,9 +40,7 @@
                   CommandName="AddFavoriteCmd" />
           </b:BehaviorCollection>
         </b:Interaction.Behaviors>-->
-        <Image.GestureRecognizers>
-          <TapGestureRecognizer Tapped="OnFavoriteTapped" />
-        </Image.GestureRecognizers>
+
       </Image>
     </Grid>
   </StackLayout>

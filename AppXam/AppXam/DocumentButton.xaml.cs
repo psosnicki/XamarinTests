@@ -17,7 +17,7 @@ namespace AppXam
 
         protected void OnFavoriteTapped(object sender, EventArgs args)
         {
-            var src = sender as Image;
+            var src = sender as Grid;
             if (src != null)
             {
                 var doc = src.BindingContext as Document;

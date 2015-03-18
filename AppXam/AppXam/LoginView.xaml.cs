@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+
 using Xamarin.Forms;
 
 namespace AppXam
 {
-    public partial class DocumentSearchView : ContentPage
+    public partial class LoginView : ContentPage
     {
-        public DocumentSearchView()
+        public LoginView()
         {
             InitializeComponent();
         }

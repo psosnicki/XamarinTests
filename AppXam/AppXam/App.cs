@@ -31,7 +31,7 @@ namespace AppXam
            // IResolver autofacResolver = new AutofacResolver(Container);
            // Resolver.SetResolver(autofacResolver);
         
-     
+        
 
 
            // var mp2 = autofacResolver.Resolve<IMediaPicker>();
@@ -39,7 +39,8 @@ namespace AppXam
             try
             {
                 // The root page of your application
-                MainPage = new DocumentSearchView { BindingContext = new DocumentSearchViewModel() };
+                MainPage = new NavigationPage(new DocumentSearchView { BindingContext = new DocumentSearchViewModel() });
+
             }
             catch (Exception ex)
             {
