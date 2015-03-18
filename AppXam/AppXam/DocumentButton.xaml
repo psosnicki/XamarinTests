@@ -10,19 +10,19 @@
   <!--<Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />-->
   <StackLayout Orientation="Horizontal">
 
-    <Image Source="{local:ImageResource AppXam.Images.success.png}" />
+    <!--<Image Source="{local:ImageResource AppXam.Images.success.png}" />-->
     <StackLayout Orientation="Vertical">
       <Label Text="{Binding DisplayName}"/>
       <Label Text="Invoice"></Label>
       <Label Text="27.03.01 2014 John Mone"></Label>
     </StackLayout>
     <Grid>
-      <Grid.GestureRecognizers>
+      <!--<Grid.GestureRecognizers>
         <TapGestureRecognizer Tapped="OnFavoriteTapped" />
-      </Grid.GestureRecognizers>
+      </Grid.GestureRecognizers>-->
 
-      <Image x:Name="imgStarOutline" Source="{local:ImageResource AppXam.Images.star_outline.png}" />
-      <Image x:Name="imgStarSelected" IsVisible="{Binding IsFavorite,Mode=TwoWay}" Source="{local:ImageResource AppXam.Images.star_selected.png}">
+      <!--<Image x:Name="imgStarOutline" Source="{local:ImageResource AppXam.Images.star_outline.png}" />
+      <Image x:Name="imgStarSelected" IsVisible="{Binding IsFavorite,Mode=TwoWay}" Source="{local:ImageResource AppXam.Images.star_selected.png}">-->
 
         <!--<b:Interaction.Behaviors>
           <b:BehaviorCollection>
@@ -31,9 +31,9 @@
                   CommandName="AddFavoriteCmd"
                   CommandParameter="1" />
           </b:BehaviorCollection>
-        </b:Interaction.Behaviors>-->
+        </b:Interaction.Behaviors>
 
-        <!--<b:Interaction.Behaviors>
+        <b:Interaction.Behaviors>
           <b:BehaviorCollection>
             <b:EventToCommand CommandNameContext="{b:RelativeContext DocButton}"
                   EventName="Tapped"
@@ -41,7 +41,7 @@
           </b:BehaviorCollection>
         </b:Interaction.Behaviors>-->
 
-      </Image>
+      <!--</Image>-->
     </Grid>
   </StackLayout>
 </ContentView>

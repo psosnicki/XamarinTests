@@ -25,7 +25,7 @@ namespace AppXam
             }
         }
 
-        public IList<Document> FoundDocuments { get; set; }
+        public ObservableCollection<Document> FoundDocuments { get; set; }
         public ObservableCollection<Suggestion> Suggestions { get; set; }
 
         public ICommand AddFavoriteCmd { get; set; }
@@ -33,14 +33,20 @@ namespace AppXam
         public ICommand LoadItemsCmd { get; set; }
         public ICommand ItemSelected { get; set; }
 
+        int c = 0;
         public DocumentSearchViewModel()
         {
-            FoundDocuments = new List<Document>() {  
+            FoundDocuments = new ObservableCollection<Document>() {  
                 new Document{ DisplayName = "Display 1 name"},
                 new Document{ DisplayName = "Display 2 name" , IsFavorite = true}
             };
 
-            Suggestions = new ObservableCollection<Suggestion>(GetSuggestions());
+            for (int i = 0; i < 20;i++ )
+            {
+                FoundDocuments.Add(new Document { DisplayName = "Display 1 name"+i });
+            }
+
+                Suggestions = new ObservableCollection<Suggestion>(GetSuggestions());
             SuggestionSelectedCmd = new Command<Suggestion>(OnSuggestionSelected);
             LoadItemsCmd = new Command(LoadMoreItems);
             ItemSelected = new Command<Document>(OnItemSelected);
@@ -51,19 +57,31 @@ namespace AppXam
             
         }
 
-        private async void LoadMoreItems()
+        private  async void LoadMoreItems()
         {
-            _isLoading = true;
-            var result = await LoadItemsAsync();
-            _isLoading = false;
+                IsLoading = true;
+                var result = await LoadItemsAsync();
+                //var result = new List<Document>() { new Document { DisplayName = "loaded1" }, new Document { DisplayName = "Loaded2" } }; 
+                foreach (var r in result)
+                {
+                    FoundDocuments.Add(r);
+                   // OnPropertyChanged("FoundDocuments");
+
+                }
+                IsLoading = false;
         }
 
         private async Task<IList<Document>> LoadItemsAsync()
         {
-            await Task.Delay(2000);
-            return await Task.Run<IList<Document>>(() => {
-                return new List<Document>() { new Document{ DisplayName = "loaded1"}, new Document{DisplayName="Loaded2"} };
-            });
+          
+                await Task.Delay(2000);
+                return await Task.Run<IList<Document>>(() =>
+                {
+
+                    return new List<Document>() { new Document { DisplayName = c++.ToString() }, new Document { DisplayName = c++.ToString() } };
+                });
+            
+           
         }
 
         private void OnSuggestionSelected(Suggestion obj)

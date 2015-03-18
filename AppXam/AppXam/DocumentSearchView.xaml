@@ -23,7 +23,7 @@
   
   <!--<Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />-->
   <StackLayout>
-    <ActivityIndicator IsRunning="{Binding IsLoading}" IsVisible="{Binding IsLoading}"/>
+   
     <controls:AutoCompleteView Placeholder="Enter text to search"
                                SuggestionItemDataTemplate="{StaticResource SugestionItemTemplate}"
                                SelectedCommand="{Binding SuggestionSelectedCmd}"
@@ -49,6 +49,7 @@
         </DataTemplate>
       </local:InfiniteListView.ItemTemplate>
     </local:InfiniteListView>
+    <ActivityIndicator IsRunning="{Binding IsLoading,Mode=TwoWay}" IsVisible="{Binding IsLoading,Mode=TwoWay}"/>
   </StackLayout>
   
 </ContentPage>
