@@ -10,6 +10,7 @@ using Xamarin.Forms;
 using AppXam;
 using AppXam.Droid;
 using XLabs.Forms;
+using ImageCircle.Forms.Plugin.Droid;
 
 
 [assembly: ExportRenderer(typeof(LinearPage), typeof(LinearPageRenderer))]
@@ -24,6 +25,7 @@ namespace AppXam.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
+            ImageCircleRenderer.Init();
             LoadApplication(new App());
         }
     }

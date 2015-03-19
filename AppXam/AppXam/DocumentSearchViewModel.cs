@@ -37,8 +37,8 @@ namespace AppXam
         public DocumentSearchViewModel()
         {
             FoundDocuments = new ObservableCollection<Document>() {  
-                new Document{ DisplayName = "Display 1 name"},
-                new Document{ DisplayName = "Display 2 name" , IsFavorite = true}
+                new Document{ DisplayName = "Display 1 mock name", ModifiedDate = DateTime.Parse("2014-03-03 17:54") , DocumentClassName ="Invoice"},
+                new Document{ DisplayName = "Display 2 mock name" , IsFavorite = true, ModifiedDate = DateTime.Parse("2013-07-03 19:54") , DocumentClassName ="Invoice"}
             };
 
             for (int i = 0; i < 20;i++ )
@@ -46,7 +46,7 @@ namespace AppXam
                 FoundDocuments.Add(new Document { DisplayName = "Display 1 name"+i });
             }
 
-                Suggestions = new ObservableCollection<Suggestion>(GetSuggestions());
+            Suggestions = new ObservableCollection<Suggestion>(GetSuggestions());
             SuggestionSelectedCmd = new Command<Suggestion>(OnSuggestionSelected);
             LoadItemsCmd = new Command(LoadMoreItems);
             ItemSelected = new Command<Document>(OnItemSelected);

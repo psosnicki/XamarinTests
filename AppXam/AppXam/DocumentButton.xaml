@@ -7,41 +7,89 @@
   <ContentView.Resources>
       
   </ContentView.Resources>
-  <!--<Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />-->
+  
+  
+<Grid Padding="5">
+  
+      <Grid.RowDefinitions>
+      <RowDefinition Height="40"></RowDefinition>
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        
+        
+        <ColumnDefinition Width="40"></ColumnDefinition>
+        <ColumnDefinition Width="*"></ColumnDefinition>
+        <ColumnDefinition Width="20"></ColumnDefinition>
+        
+      </Grid.ColumnDefinitions>
+  
+      <Image Grid.Row="0" Grid.Column="0"  Source="{Binding ImgSource}" Aspect="AspectFill"/>
+      <StackLayout Grid.Column="1" Orientation="Vertical">
+        <Label Text="{Binding DisplayName}" LineBreakMode="TailTruncation"></Label>
+        <StackLayout Orientation="Horizontal">
+          <Label Text="{Binding DocumentClassName}" Font="Small"/>
+          <Label Text="{Binding LastModified}" Font="Small" />
+        </StackLayout>
+
+      </StackLayout>
+     
+     
+      <Grid Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center"  Grid.Column="2">
+        <Grid.GestureRecognizers>
+          <TapGestureRecognizer Tapped="OnFavoriteTapped" />
+        </Grid.GestureRecognizers>
+        <Image  Source="icon.png" Aspect="AspectFill"/>
+        <!--<Image x:Name="imgStarOutline" Source="icon.png" />-->
+        <!--<Image x:Name="imgStarSelected" IsVisible="{Binding IsFavorite,Mode=TwoWay}" Source="icon.png"/>-->
+      </Grid>
+
+</Grid> 
+    
+    
+      
+      
+      
+    
+    
+      
+      
+      
+      
+  <!--<Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
   <StackLayout Orientation="Horizontal">
 
-    <!--<Image Source="{local:ImageResource AppXam.Images.success.png}" />-->
+    <Image WidthRequest="32" HeightRequest="32" Aspect="AspectFill" Source="icon.png" />
     <StackLayout Orientation="Vertical">
       <Label Text="{Binding DisplayName}"/>
       <Label Text="Invoice"></Label>
       <Label Text="27.03.01 2014 John Mone"></Label>
     </StackLayout>
-    <Grid>
-      <!--<Grid.GestureRecognizers>
+    <Grid WidthRequest="20" HeightRequest="20" >
+      <Grid.GestureRecognizers>
         <TapGestureRecognizer Tapped="OnFavoriteTapped" />
-      </Grid.GestureRecognizers>-->
+      </Grid.GestureRecognizers>
 
-      <!--<Image x:Name="imgStarOutline" Source="{local:ImageResource AppXam.Images.star_outline.png}" />
-      <Image x:Name="imgStarSelected" IsVisible="{Binding IsFavorite,Mode=TwoWay}" Source="{local:ImageResource AppXam.Images.star_selected.png}">-->
+      <Image x:Name="imgStarOutline" Aspect="AspectFill" Source="icon.png" />
+      <Image x:Name="imgStarSelected"  Aspect="AspectFill" IsVisible="{Binding IsFavorite,Mode=TwoWay}" Source="icon.png">
 
-        <!--<b:Interaction.Behaviors>
+        --><!--<b:Interaction.Behaviors>
           <b:BehaviorCollection>
             <b:EventToCommand CommandNameContext="{b:RelativeContext DocButton}"
                   EventName="Clicked"
                   CommandName="AddFavoriteCmd"
                   CommandParameter="1" />
           </b:BehaviorCollection>
-        </b:Interaction.Behaviors>
+        </b:Interaction.Behaviors>--><!--
 
-        <b:Interaction.Behaviors>
+        --><!--<b:Interaction.Behaviors>
           <b:BehaviorCollection>
             <b:EventToCommand CommandNameContext="{b:RelativeContext DocButton}"
                   EventName="Tapped"
                   CommandName="AddFavoriteCmd" />
           </b:BehaviorCollection>
-        </b:Interaction.Behaviors>-->
+        </b:Interaction.Behaviors>--><!--
 
-      <!--</Image>-->
+      </Image>
     </Grid>
-  </StackLayout>
+  </StackLayout>-->
 </ContentView>

@@ -40,6 +40,7 @@ namespace AppXam
             {
                 // The root page of your application
                 MainPage = new NavigationPage(new DocumentSearchView { BindingContext = new DocumentSearchViewModel() });
+                
 
             }
             catch (Exception ex)

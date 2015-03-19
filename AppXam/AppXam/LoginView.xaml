@@ -7,5 +7,6 @@
   <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
   <StackLayout Orientation="Vertical">
     <controls:ExtendedEntry Font="Large" Placeholder="username"  HorizontalOptions="StartAndExpand" VerticalOptions="Center" />
+    <controls:ExtendedEntry Font="Large" Placeholder="password"  HorizontalOptions="StartAndExpand" VerticalOptions="Center" />
   </StackLayout>
 </ContentPage>

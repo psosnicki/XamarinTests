@@ -11,8 +11,8 @@
       <DataTemplate x:Key="SugestionItemTemplate">
         <ViewCell>
           <ViewCell.View>
-            <Grid>
-              <Label Text="{Binding Name}"/>
+            <Grid Padding="2">
+              <Label Font="Large" Text="{Binding Name}"/>
             </Grid>
           </ViewCell.View>
         </ViewCell>

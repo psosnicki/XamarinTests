@@ -24,6 +24,11 @@ namespace AppXam
             }
         }
         public string DisplayName { get; set; }
+        public string DocumentClassName { get; set; }
+        public string LastModified { get { return ModifiedDate.ToString(); } }
+        public DateTime ModifiedDate { get; set; }
+
+        public string ImgSource { get { return "icon.png"; }  }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
