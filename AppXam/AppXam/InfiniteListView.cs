@@ -29,7 +29,7 @@ namespace AppXam
         public InfiniteListView()
         {
             ItemAppearing += InfiniteListView_ItemAppearing;
-            //ItemTapped +=InfiniteListView_ItemTapped;
+            ItemTapped +=InfiniteListView_ItemTapped;
         }
 
         private void InfiniteListView_ItemTapped(object sender, ItemTappedEventArgs e)

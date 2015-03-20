@@ -11,7 +11,7 @@
       <DataTemplate x:Key="SugestionItemTemplate">
         <ViewCell>
           <ViewCell.View>
-            <Grid Padding="2">
+            <Grid Padding="2" BackgroundColor="White">
               <Label Font="Large" Text="{Binding Name}"/>
             </Grid>
           </ViewCell.View>
@@ -25,6 +25,7 @@
   <StackLayout>
    
     <controls:AutoCompleteView Placeholder="Enter text to search"
+                               SearchBackgroundColor="White"
                                SuggestionItemDataTemplate="{StaticResource SugestionItemTemplate}"
                                SelectedCommand="{Binding SuggestionSelectedCmd}"
                                ShowSearch="True"
@@ -32,7 +33,7 @@
                                Suggestions="{Binding Suggestions,Mode=TwoWay}" >
     </controls:AutoCompleteView>
 
-    <local:InfiniteListView x:Name="lvFoundDocs" ItemsSource="{Binding FoundDocuments}" LoadMoreCommand="{Binding LoadItemsCmd}" >
+    <local:InfiniteListView x:Name="lvFoundDocs" ItemsSource="{Binding FoundDocuments}"  SelectedItem="{Binding CurrentSelectedItem}" ItemTappedCommand="{Binding ItemSelectedCmd}" LoadMoreCommand="{Binding LoadItemsCmd}" >
       <!--<b:Interaction.Behaviors>
         <b:BehaviorCollection>
           <b:EventToCommand CommandNameContext="{b:RelativeContext DocSearchView}" EventName="ItemAppearing" CommandParameter="{Binding}" CommandName="LoadItemsCmd" />

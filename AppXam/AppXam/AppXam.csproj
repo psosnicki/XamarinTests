@@ -42,10 +42,14 @@
       <DependentUpon>DocumentButton.xaml</DependentUpon>
     </Compile>
     <Compile Include="DocumentCell.cs" />
+    <Compile Include="DocumentDetailsView.xaml.cs">
+      <DependentUpon>DocumentDetailsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DocumentSearchView.xaml.cs">
       <DependentUpon>DocumentSearchView.xaml</DependentUpon>
     </Compile>
     <Compile Include="DocumentSearchViewModel.cs" />
+    <Compile Include="ImageCache.cs" />
     <Compile Include="InfiniteListView.cs" />
     <Compile Include="LinearPage.cs" />
     <Compile Include="LoginView.xaml.cs">
@@ -118,6 +122,11 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="LoginView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DocumentDetailsView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

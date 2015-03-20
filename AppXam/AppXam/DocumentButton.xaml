@@ -10,23 +10,35 @@
   
   
 <Grid Padding="5">
-  
+
+
       <Grid.RowDefinitions>
       <RowDefinition Height="40"></RowDefinition>
       </Grid.RowDefinitions>
       <Grid.ColumnDefinitions>
         
         
-        <ColumnDefinition Width="40"></ColumnDefinition>
+        <ColumnDefinition Width="32"></ColumnDefinition>
         <ColumnDefinition Width="*"></ColumnDefinition>
-        <ColumnDefinition Width="20"></ColumnDefinition>
+        <ColumnDefinition Width="22"></ColumnDefinition>
         
       </Grid.ColumnDefinitions>
   
-      <Image Grid.Row="0" Grid.Column="0"  Source="{Binding ImgSource}" Aspect="AspectFill"/>
+      <Image x:Name="imgDoc" Grid.Row="0" Grid.Column="0"  Aspect="AspectFit"/>
       <StackLayout Grid.Column="1" Orientation="Vertical">
         <Label Text="{Binding DisplayName}" LineBreakMode="TailTruncation"></Label>
         <StackLayout Orientation="Horizontal">
+          <!--<Label>
+            <Label.FormattedText>
+              <FormattedString>
+                <FormattedString.Spans>
+                  <Span Text="{Binding DocumentClassName}" Font="Small"/>
+                  <Span Text=" " Font="Small"/>
+                  <Span Text="{Binding LastModified}" Font="Small"/>
+                </FormattedString.Spans>
+              </FormattedString>
+            </Label.FormattedText>
+          </Label>-->
           <Label Text="{Binding DocumentClassName}" Font="Small"/>
           <Label Text="{Binding LastModified}" Font="Small" />
         </StackLayout>
@@ -38,7 +50,7 @@
         <Grid.GestureRecognizers>
           <TapGestureRecognizer Tapped="OnFavoriteTapped" />
         </Grid.GestureRecognizers>
-        <Image  Source="icon.png" Aspect="AspectFill"/>
+        <Image x:Name="imgFavorite"  Aspect="AspectFit"/>
         <!--<Image x:Name="imgStarOutline" Source="icon.png" />-->
         <!--<Image x:Name="imgStarSelected" IsVisible="{Binding IsFavorite,Mode=TwoWay}" Source="icon.png"/>-->
       </Grid>

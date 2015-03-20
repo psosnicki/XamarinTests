@@ -6,6 +6,9 @@ using System.Linq;
 using System.Text;
 using Xamarin.Forms;
 using XLabs.Forms.Controls;
+using XLabs.Ioc;
+using XLabs.Platform.Device;
+using XLabs.Platform.Services;
 
 
 namespace AppXam
@@ -13,6 +16,7 @@ namespace AppXam
     public class App : Application
     {
         public static IContainer Container { get; set; }
+        public static string BaseUrl { get; set; }
 
         public App()
         {
@@ -30,16 +34,22 @@ namespace AppXam
 
            // IResolver autofacResolver = new AutofacResolver(Container);
            // Resolver.SetResolver(autofacResolver);
-        
-        
 
+
+
+          
 
            // var mp2 = autofacResolver.Resolve<IMediaPicker>();
 
             try
             {
+                ImageCache.GetImageFromFileName("document.png");
+                ImageCache.GetImageFromFileName("star_unchecked.png");
+
                 // The root page of your application
-                MainPage = new NavigationPage(new DocumentSearchView { BindingContext = new DocumentSearchViewModel() });
+
+                MainPage = new DocumentDetailsView();
+                //MainPage = new NavigationPage(new DocumentSearchView { BindingContext = new DocumentSearchViewModel(null) });
                 
 
             }

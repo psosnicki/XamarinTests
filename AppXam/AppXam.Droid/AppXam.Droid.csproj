@@ -126,6 +126,7 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ZoomeableWebViewRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -141,6 +142,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\AndroidManifest.xml" />
+    <AndroidResource Include="Resources\drawable\star.png" />
+    <AndroidResource Include="Resources\drawable\star_unchecked.png" />
+    <AndroidResource Include="Resources\drawable\document.png" />
+    <AndroidResource Include="Resources\drawable\pdf.png" />
+    <AndroidResource Include="Resources\drawable\xlsx.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AppXam\AppXam.csproj">

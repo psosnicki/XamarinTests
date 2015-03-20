@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
+using XLabs.Platform.Services;
 
 namespace AppXam
 {
@@ -31,30 +32,40 @@ namespace AppXam
         public ICommand AddFavoriteCmd { get; set; }
         public ICommand SuggestionSelectedCmd { get; set; }
         public ICommand LoadItemsCmd { get; set; }
-        public ICommand ItemSelected { get; set; }
+        public ICommand ItemSelectedCmd { get; set; }
+        public Document CurrentSelectedItem { get; set; }
+
 
         int c = 0;
-        public DocumentSearchViewModel()
-        {
-            FoundDocuments = new ObservableCollection<Document>() {  
-                new Document{ DisplayName = "Display 1 mock name", ModifiedDate = DateTime.Parse("2014-03-03 17:54") , DocumentClassName ="Invoice"},
-                new Document{ DisplayName = "Display 2 mock name" , IsFavorite = true, ModifiedDate = DateTime.Parse("2013-07-03 19:54") , DocumentClassName ="Invoice"}
-            };
+        private AppNavigationService _navigation;
 
-            for (int i = 0; i < 20;i++ )
+        public DocumentSearchViewModel(AppNavigationService navigation)
+        {
+            _navigation = navigation;
+
+            FoundDocuments = new ObservableCollection<Document>();
+            for (int i = 0; i < 2000;i++ )
             {
-                FoundDocuments.Add(new Document { DisplayName = "Display 1 name"+i });
+                var doc = new Document { DisplayName = "Display 1 name" + i, ModifiedDate = DateTime.Parse("2014-03-03 17:54"), DocumentClassName = "Invoice",Extension="xlsx" };
+                if (i % 2 == 0)
+                {
+                    doc.Extension = "pdf";
+                }
+              
+                FoundDocuments.Add(doc);
             }
 
             Suggestions = new ObservableCollection<Suggestion>(GetSuggestions());
             SuggestionSelectedCmd = new Command<Suggestion>(OnSuggestionSelected);
             LoadItemsCmd = new Command(LoadMoreItems);
-            ItemSelected = new Command<Document>(OnItemSelected);
+            ItemSelectedCmd = new Command(OnItemSelected);
         }
 
-        private void OnItemSelected(Document item)
+        private void OnItemSelected()
         {
-            
+            var item = CurrentSelectedItem;
+         
+
         }
 
         private  async void LoadMoreItems()

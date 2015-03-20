@@ -27,6 +27,7 @@ namespace AppXam
         public string DocumentClassName { get; set; }
         public string LastModified { get { return ModifiedDate.ToString(); } }
         public DateTime ModifiedDate { get; set; }
+        public string Extension { get; set; }
 
         public string ImgSource { get { return "icon.png"; }  }
 

@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:Xamarin.Forms.Labs.Controls;assembly=Xamarin.Forms.Labs"
+             x:Class="AppXam.DocumentDetailsView">
+  <!--<Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />-->
+
+
+
+  <TabbedPage.Children>
+    <ContentPage Title="Page1">
+      <Grid>
+        <Grid.RowDefinitions>
+          <RowDefinition Height="40"/>
+          <RowDefinition Height="*"/>
+          <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Padding="2" Grid.Row="0">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="32"/>
+          </Grid.ColumnDefinitions>
+
+          <Label Font="Large" Text="Invoice 12345" HorizontalOptions="Center" VerticalOptions="Center"/>
+          <Image Grid.Column="1" Source="star_unchecked.png"/>
+          
+        </Grid>
+        
+        <AbsoluteLayout Grid.Row="1">
+          <WebView x:Name="imgView" BackgroundColor="White">
+            
+          </WebView>
+        </AbsoluteLayout>
+        <!--<Grid Grid.Row="2">
+          <BoxView BackgroundColor="Gray"></BoxView>
+        </Grid>-->
+        <StackLayout Grid.Row="2">
+          <Label Text="Id:1234"/>
+          <Label Text="Id:1234"/>
+          <Label Text="Id:1234"/>
+          <Label Text="Id:1234"/>
+          <Label Text="Id:1234"/>
+          <Label Text="Id:1234"/>
+          <Label Text="Id:1234"/>
+        </StackLayout>
+        
+        <ScrollView Grid.Row="2">
+          
+        </ScrollView>
+        
+      </Grid>
+    </ContentPage>
+    <ContentPage Title="Page2"></ContentPage>
+  </TabbedPage.Children>
+  
+</TabbedPage>

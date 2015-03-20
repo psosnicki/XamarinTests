@@ -9,5 +9,9 @@ namespace AppXam
     public class Suggestion
     {
         public string Name { get; set; }
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }
