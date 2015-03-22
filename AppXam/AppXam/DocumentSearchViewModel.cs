@@ -44,7 +44,7 @@ namespace AppXam
             _navigation = navigation;
 
             FoundDocuments = new ObservableCollection<Document>();
-            for (int i = 0; i < 2000;i++ )
+            for (int i = 0; i < 200;i++ )
             {
                 var doc = new Document { DisplayName = "Display 1 name" + i, ModifiedDate = DateTime.Parse("2014-03-03 17:54"), DocumentClassName = "Invoice",Extension="xlsx" };
                 if (i % 2 == 0)

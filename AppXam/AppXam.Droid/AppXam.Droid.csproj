@@ -126,6 +126,7 @@
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoundedLabelRenderer.cs" />
     <Compile Include="ZoomeableWebViewRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -147,6 +148,14 @@
     <AndroidResource Include="Resources\drawable\document.png" />
     <AndroidResource Include="Resources\drawable\pdf.png" />
     <AndroidResource Include="Resources\drawable\xlsx.png" />
+    <AndroidResource Include="Resources\drawable\tasks.png" />
+    <AndroidResource Include="Resources\drawable\circleBck.png" />
+    <AndroidResource Include="Resources\drawable\search.png.png" />
+    <AndroidResource Include="Resources\drawable\favorites.png" />
+    <AndroidResource Include="Resources\drawable\myRepo.png" />
+    <AndroidResource Include="Resources\drawable\user.png" />
+    <AndroidResource Include="Resources\drawable\addNew.png" />
+    <AndroidResource Include="Resources\drawable\recents.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AppXam\AppXam.csproj">

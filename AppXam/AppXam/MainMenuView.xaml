@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AppXam;assembly=AppXam"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             xmlns:cimg="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             x:Class="AppXam.MainMenuView" BackgroundColor="White">
+  
+
+
+
+
+  <!--<Grid RowSpacing="0">
+
+    <Grid.RowDefinitions>
+      <RowDefinition Height="100" />
+      <RowDefinition Height="*" />
+      <RowDefinition Height="50" />
+    </Grid.RowDefinitions>-->
+    
+    
+
+    <!--<Grid.ColumnDefinitions>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="2"/>
+      <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>-->
+    
+    <!--  row background colors  -->
+    <!--<BoxView Grid.Row="0" Color="#3A444D" />
+    <BoxView Grid.Row="1" Color="#e6e8e5" />
+    <BoxView Grid.Row="2" Color="#3A444D" />-->
+
+    <!--  title  -->
+    <Label FontSize="Large" HorizontalOptions="Center" Text="MY SPRINGBOARD"
+           TextColor="White" VerticalOptions="Center" />
+
+
+  
+    <!--  inner grid for button layouts  -->
+    <Grid Grid.Row="1" ColumnSpacing="1" 
+          RowSpacing="8" >
+      <Grid.RowDefinitions>
+
+        
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="*" />
+        <RowDefinition Height="*" />
+        <RowDefinition Height="40" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"  />
+        <ColumnDefinition Width="1"/>
+        <ColumnDefinition Width="*" />
+      </Grid.ColumnDefinitions>
+
+
+      <Grid Grid.Row="0" Grid.Column="0" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="White">
+          <StackLayout  HorizontalOptions="Center" VerticalOptions="Center" Orientation="Vertical" BackgroundColor="White">
+            <RelativeLayout >
+              <Image Source="tasks.png" HeightRequest="60" WidthRequest="60"  />
+
+    
+              <Frame RelativeLayout.XConstraint="60"  BackgroundColor="Green" RelativeLayout.YConstraint="0"   Padding="4,1,4,1">
+                  <Label Font="Medium" HorizontalOptions="Center"  TextColor="White" Text="12"/>
+              </Frame>
+            </RelativeLayout>
+            <Label HorizontalOptions="Center" FontAttributes="Bold" Text="Tasks"/>
+        </StackLayout>
+      </Grid>
+
+
+      <Grid Grid.Row="0" Grid.Column="2"  HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="White">
+        <StackLayout  Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="White">
+          <Image Source="search.png"   HeightRequest="60" WidthRequest="60" />
+          <Label HorizontalOptions="Center" FontAttributes="Bold" Text="Search"/>
+        </StackLayout>
+      </Grid>
+
+      <Grid Grid.Row="1" Grid.Column="0"  HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="White">
+        <StackLayout  Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center"  BackgroundColor="White">
+          <Image Source="favorites.png"   HeightRequest="60" WidthRequest="60" />
+          <Label HorizontalOptions="Center" FontAttributes="Bold" Text="Favorites"/>
+        </StackLayout>
+      </Grid>
+      
+      
+      <BoxView BackgroundColor="Gray" Grid.Row="1" Grid.Column="1"/>
+      <!--<BoxView BackgroundColor="Gray" Grid.Column="1"/>-->
+      <BoxView BackgroundColor="Gray" Grid.Row="2" Grid.Column="1"/>
+
+
+      <Grid Grid.Row="1" Grid.Column="2"  HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="White">
+        <StackLayout  Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center"  BackgroundColor="White">
+          <Image Source="myRepo.png"   HeightRequest="60" WidthRequest="60" />
+          <Label HorizontalOptions="Center" FontAttributes="Bold" Text="Repository"/>
+        </StackLayout>
+      </Grid>
+
+
+
+      <Grid Grid.Row="2" Grid.Column="0"  HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="White">
+        <StackLayout  Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center"  BackgroundColor="White">
+          <Image Source="addNew.png"   HeightRequest="60" WidthRequest="60" />
+          <Label HorizontalOptions="Center" FontAttributes="Bold" Text="New document"/>
+        </StackLayout>
+      </Grid>
+
+
+      <Grid Grid.Row="2" Grid.Column="2"  HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="White">
+        <StackLayout  Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center"  BackgroundColor="White">
+          <Image Source="recents.png"   HeightRequest="60" WidthRequest="60"  />
+          <Label HorizontalOptions="Center" FontAttributes="Bold" Text="Recents"/>
+        </StackLayout>
+      </Grid>
+
+
+       
+          <controls:ImageButton Grid.Row="3" Grid.Column="0" HorizontalOptions="FillAndExpand"  Text="Simple" BackgroundColor="#97c7c9" TextColor="#ffffff"  Source="star_unchecked.png" Orientation="ImageToLeft"  />
+          <controls:ImageButton Grid.Row="3" Grid.Column="2" HorizontalOptions="FillAndExpand"  Text="Details" BackgroundColor="#97c7c9" TextColor="#ffffff"  Source="star_unchecked.png" Orientation="ImageToLeft"  />
+  
+      
+      
+    
+      
+    </Grid>
+  <!--</Grid>-->
+
+
+
+
+
+
+
+
+
+</ContentPage>

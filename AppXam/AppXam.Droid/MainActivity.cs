@@ -18,6 +18,7 @@ using XLabs.Ioc;
 
 [assembly: ExportRenderer(typeof(LinearPage), typeof(LinearPageRenderer))]
 [assembly: ExportRenderer(typeof(WebView), typeof(ZoomableWebViewRenderer))]
+[assembly: ExportRenderer(typeof(RoundedLabel), typeof(RoundedLabelRenderer))]
 namespace AppXam.Droid
 {
 

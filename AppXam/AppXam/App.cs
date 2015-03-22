@@ -20,6 +20,7 @@ namespace AppXam
 
         public App()
         {
+      
            // var fs = DependencyService.Get<IFileSystem>();
 
            // var container = new ContainerBuilder();
@@ -43,13 +44,14 @@ namespace AppXam
 
             try
             {
-                ImageCache.GetImageFromFileName("document.png");
+                ImageCache.GetImageFromFileName("xlsx.png");
+                ImageCache.GetImageFromFileName("pdf.png");
                 ImageCache.GetImageFromFileName("star_unchecked.png");
 
                 // The root page of your application
 
-                MainPage = new DocumentDetailsView();
-                //MainPage = new NavigationPage(new DocumentSearchView { BindingContext = new DocumentSearchViewModel(null) });
+                //MainPage = new DocumentDetailsView();
+                MainPage = new NavigationPage(new MainMenuView());//new NavigationPage(new DocumentSearchView { BindingContext = new DocumentSearchViewModel(null) });
                 
 
             }

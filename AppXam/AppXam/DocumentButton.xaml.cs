@@ -20,7 +20,7 @@ namespace AppXam
 
         protected void OnFavoriteTapped(object sender, EventArgs args)
         {
-            var src = sender as Grid;
+            var src = sender as Image;
             if (src != null)
             {
                 var doc = src.BindingContext as Document;
@@ -43,7 +43,7 @@ namespace AppXam
 
             imgDoc.Source = ImageCache.GetImageFromFileName(ctx.Extension+".png");
             imgFavorite.Source = ImageCache.GetImageFromFileName(STAR_UNCHECKED);
-            if (imgDoc.Source == null) throw new Exception("null source");
+            //if (imgDoc.Source == null) throw new Exception("null source");
             //imgFavorite.Source = 
             //imgDoc.Source = ImageCache.GetImageFromFileName("document.png");
             //

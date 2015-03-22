@@ -44,16 +44,20 @@
         </StackLayout>
 
       </StackLayout>
-     
-     
-      <Grid Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center"  Grid.Column="2">
+
+  <Image x:Name="imgFavorite" Grid.Column="2" Aspect="AspectFit">
+    <Image.GestureRecognizers>
+      <TapGestureRecognizer Tapped="OnFavoriteTapped" />
+    </Image.GestureRecognizers>
+  </Image>
+      <!--<Grid Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center"  Grid.Column="2">
         <Grid.GestureRecognizers>
           <TapGestureRecognizer Tapped="OnFavoriteTapped" />
         </Grid.GestureRecognizers>
-        <Image x:Name="imgFavorite"  Aspect="AspectFit"/>
-        <!--<Image x:Name="imgStarOutline" Source="icon.png" />-->
-        <!--<Image x:Name="imgStarSelected" IsVisible="{Binding IsFavorite,Mode=TwoWay}" Source="icon.png"/>-->
-      </Grid>
+       
+        --><!--<Image x:Name="imgStarOutline" Source="icon.png" />--><!--
+        --><!--<Image x:Name="imgStarSelected" IsVisible="{Binding IsFavorite,Mode=TwoWay}" Source="icon.png"/>--><!--
+      </Grid>-->
 
 </Grid> 
     

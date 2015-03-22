@@ -24,7 +24,7 @@
   <!--<Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />-->
   <StackLayout>
    
-    <controls:AutoCompleteView Placeholder="Enter text to search"
+    <controls:AutoCompleteView x:Name="autoSearch" Placeholder="Enter text to search"
                                SearchBackgroundColor="White"
                                SuggestionItemDataTemplate="{StaticResource SugestionItemTemplate}"
                                SelectedCommand="{Binding SuggestionSelectedCmd}"
