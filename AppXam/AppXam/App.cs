@@ -51,7 +51,7 @@ namespace AppXam
                 // The root page of your application
 
                 //MainPage = new DocumentDetailsView();
-                MainPage = new NavigationPage(new MainMenuView());//new NavigationPage(new DocumentSearchView { BindingContext = new DocumentSearchViewModel(null) });
+                MainPage = new NavigationPage(new TasksView());//(new MainMenuView());//new NavigationPage(new DocumentSearchView { BindingContext = new DocumentSearchViewModel(null) });
                 
 
             }

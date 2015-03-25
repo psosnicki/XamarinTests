@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             xmlns:local="clr-namespace:AppXam;assembly=AppXam"
+             x:Class="AppXam.TasksView">
+  <StackLayout Orientation="Vertical">
+    <controls:AutoCompleteView x:Name="autoSearch" Placeholder="Enter text to search"
+                           SearchBackgroundColor="White"
+                           SuggestionItemDataTemplate="{StaticResource SugestionItemTemplate}"
+                           SelectedCommand="{Binding SuggestionSelectedCmd}"
+                           ShowSearch="True"
+                           ShowSearchButton="False"
+                           Suggestions="{Binding Suggestions,Mode=TwoWay}" >
+    </controls:AutoCompleteView>
+
+    <local:InfiniteListView x:Name="lvFoundDocs" ItemsSource="{Binding FoundDocuments}"  SelectedItem="{Binding CurrentSelectedItem}" ItemTappedCommand="{Binding ItemSelectedCmd}" LoadMoreCommand="{Binding LoadItemsCmd}" />
+    <StackLayout Orientation="Horizontal" >
+      <controls:ImageButton  HorizontalOptions="FillAndExpand" Text="Test" BackgroundColor="#97c7c9" TextColor="#ffffff"  Source="star_unchecked.png" Orientation="ImageOnTop"  />
+      <controls:ImageButton  HorizontalOptions="FillAndExpand" Text="Test" BackgroundColor="#97c7c9" TextColor="#ffffff"  Source="star_unchecked.png" Orientation="ImageOnTop"  />
+    </StackLayout>
+  </StackLayout>
+</ContentPage>

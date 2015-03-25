@@ -63,8 +63,15 @@
       <DependentUpon>MenuButton.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ITaskRepository.cs" />
+    <Compile Include="Repositories\TaskRepository.cs" />
     <Compile Include="RoundedLabel.cs" />
     <Compile Include="Suggestion.cs" />
+    <Compile Include="EcmTask.cs" />
+    <Compile Include="TasksView.xaml.cs">
+      <DependentUpon>TasksView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TasksViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Acr.XamForms.Mobile">
@@ -151,6 +158,11 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Images\tasks.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="TasksView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.1.4.0.6341\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.1.4.0.6341\build\portable-win+net45+wp80+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />

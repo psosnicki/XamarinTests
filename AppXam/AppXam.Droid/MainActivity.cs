@@ -36,6 +36,8 @@ namespace AppXam.Droid
             Resolver.SetResolver(container.GetResolver());
 
 
+       
+
             App.BaseUrl = @"file:///android_asset/";
             base.OnCreate(bundle);
             global::Xamarin.Forms.Forms.Init(this, bundle);

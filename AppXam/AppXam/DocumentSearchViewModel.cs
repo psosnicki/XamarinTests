@@ -12,19 +12,19 @@ namespace AppXam
 {
     public class DocumentSearchViewModel : BaseViewModel
     {
-        private bool _isLoading;
-        public bool IsLoading 
-        {
-            get { return _isLoading; }
-            set
-            {
-                if (_isLoading != value)
-                {
-                    _isLoading = value;
-                    OnPropertyChanged();
-                }
-            }
-        }
+        //private bool _isLoading;
+        //public bool IsLoading 
+        //{
+        //    get { return _isLoading; }
+        //    set
+        //    {
+        //        if (_isLoading != value)
+        //        {
+        //            _isLoading = value;
+        //            OnPropertyChanged();
+        //        }
+        //    }
+        //}
 
         public ObservableCollection<Document> FoundDocuments { get; set; }
         public ObservableCollection<Suggestion> Suggestions { get; set; }
