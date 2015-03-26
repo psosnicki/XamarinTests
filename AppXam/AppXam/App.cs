@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 using XLabs.Forms.Controls;
 using XLabs.Ioc;
@@ -17,9 +19,24 @@ namespace AppXam
     {
         public static IContainer Container { get; set; }
         public static string BaseUrl { get; set; }
+        
+
+        public void Sync()
+        {
+            Task.Factory.StartNew(() => {
+
+                Device.BeginInvokeOnMainThread(() => { });
+                
+            }, CancellationToken.None, TaskCreationOptions.DenyChildAttach, TaskScheduler.Default);
+        }
+
+
 
         public App()
         {
+
+
+           
       
            // var fs = DependencyService.Get<IFileSystem>();
 
@@ -44,6 +61,9 @@ namespace AppXam
 
             try
             {
+
+                Device.StartTimer(TimeSpan.FromSeconds(5000),);
+
                 ImageCache.GetImageFromFileName("xlsx.png");
                 ImageCache.GetImageFromFileName("pdf.png");
                 ImageCache.GetImageFromFileName("star_unchecked.png");
