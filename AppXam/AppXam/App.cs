@@ -19,17 +19,21 @@ namespace AppXam
     {
         public static IContainer Container { get; set; }
         public static string BaseUrl { get; set; }
-        
 
-        public void Sync()
+        public bool Synchronize() 
+        {
+            Device.BeginInvokeOnMainThread(() => { });
+            return true; 
+        }
+
+        public void StartSyncTask()
         {
             Task.Factory.StartNew(() => {
 
-                Device.BeginInvokeOnMainThread(() => { });
+                Device.StartTimer(TimeSpan.FromSeconds(5000), Synchronize);
                 
             }, CancellationToken.None, TaskCreationOptions.DenyChildAttach, TaskScheduler.Default);
         }
-
 
 
         public App()
@@ -62,7 +66,7 @@ namespace AppXam
             try
             {
 
-                Device.StartTimer(TimeSpan.FromSeconds(5000),);
+                StartSyncTask();
 
                 ImageCache.GetImageFromFileName("xlsx.png");
                 ImageCache.GetImageFromFileName("pdf.png");
