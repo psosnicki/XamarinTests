@@ -36,6 +36,7 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="AppNavigationService.cs" />
+    <Compile Include="BaseStructure.cs" />
     <Compile Include="BaseViewModel.cs" />
     <Compile Include="Document.cs" />
     <Compile Include="DocumentButton.xaml.cs">
@@ -49,6 +50,9 @@
       <DependentUpon>DocumentSearchView.xaml</DependentUpon>
     </Compile>
     <Compile Include="DocumentSearchViewModel.cs" />
+    <Compile Include="Dossier.cs" />
+    <Compile Include="Folder.cs" />
+    <Compile Include="IHierarchicalStructure.cs" />
     <Compile Include="ImageCache.cs" />
     <Compile Include="InfiniteListView.cs" />
     <Compile Include="LinearPage.cs" />

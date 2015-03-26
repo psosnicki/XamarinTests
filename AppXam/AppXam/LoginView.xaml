@@ -8,5 +8,7 @@
   <StackLayout Orientation="Vertical">
     <controls:ExtendedEntry Font="Large" Placeholder="username"  HorizontalOptions="StartAndExpand" VerticalOptions="Center" />
     <controls:ExtendedEntry Font="Large" Placeholder="password"  HorizontalOptions="StartAndExpand" VerticalOptions="Center" />
+    <controls:ExtendedEntry Font="Large" Placeholder="server"  HorizontalOptions="StartAndExpand" VerticalOptions="Center" />
+    <controls:ImageButton Source="" Text="Log in" />
   </StackLayout>
 </ContentPage>

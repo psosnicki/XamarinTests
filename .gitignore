@@ -1,0 +1,7 @@
+# git ignore file
+/AppXam/AppXam/bin
+/AppXam/AppXam.Droid/bin
+/AppXam/AppXam.iOS/bin
+/AppXam/AppXam/obj
+/AppXam/AppXam.Droid/obj
+/AppXam/AppXam.iOS/obj/iPhone/Debug

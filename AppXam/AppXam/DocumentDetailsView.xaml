@@ -26,7 +26,7 @@
           <Image Grid.Column="1" Source="star_unchecked.png"/>
           
         </Grid>
-        
+   
         <AbsoluteLayout Grid.Row="1">
           <WebView x:Name="imgView" BackgroundColor="White">
             

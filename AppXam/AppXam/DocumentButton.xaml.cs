@@ -39,10 +39,11 @@ namespace AppXam
             base.OnBindingContextChanged();
 
             var ctx = this.BindingContext as Document;
-
-
-            imgDoc.Source = ImageCache.GetImageFromFileName(ctx.Extension+".png");
             imgFavorite.Source = ImageCache.GetImageFromFileName(STAR_UNCHECKED);
+
+            imgDoc.Source = (ctx is IHierarchicalStructure) ? ImageCache.GetImageFromFileName(ctx.ImgSource) :
+                                                              ImageCache.GetImageFromFileName(ctx.Extension+".png");
+
             //if (imgDoc.Source == null) throw new Exception("null source");
             //imgFavorite.Source = 
             //imgDoc.Source = ImageCache.GetImageFromFileName("document.png");
