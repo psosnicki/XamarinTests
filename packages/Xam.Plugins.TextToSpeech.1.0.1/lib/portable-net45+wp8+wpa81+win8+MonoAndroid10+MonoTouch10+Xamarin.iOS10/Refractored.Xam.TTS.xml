@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Refractored.Xam.TTS</name>
+    </assembly>
+    <members>
+        <member name="T:Refractored.Xam.TTS.CrossTextToSpeech">
+            <summary>
+            Cross platform TTS implemenations
+            </summary>
+        </member>
+        <member name="M:Refractored.Xam.TTS.CrossTextToSpeech.Dispose">
+            <summary>
+            Dispose of TTS, reset lazy load
+            </summary>
+        </member>
+        <member name="P:Refractored.Xam.TTS.CrossTextToSpeech.Current">
+            <summary>
+            Current settings to use
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -26,6 +26,18 @@ namespace AppXam.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::Refractored.Xam.TTS.Resource.String.ApplicationName = global::AppXam.Droid.Resource.String.ApplicationName;
+			global::Refractored.Xam.TTS.Resource.String.Hello = global::AppXam.Droid.Resource.String.Hello;
+			global::Toasts.Forms.Plugin.Droid.Resource.Drawable.error = global::AppXam.Droid.Resource.Drawable.error;
+			global::Toasts.Forms.Plugin.Droid.Resource.Drawable.info = global::AppXam.Droid.Resource.Drawable.info;
+			global::Toasts.Forms.Plugin.Droid.Resource.Drawable.success = global::AppXam.Droid.Resource.Drawable.success;
+			global::Toasts.Forms.Plugin.Droid.Resource.Drawable.warning = global::AppXam.Droid.Resource.Drawable.warning;
+			global::Toasts.Forms.Plugin.Droid.Resource.Id.desc = global::AppXam.Droid.Resource.Id.desc;
+			global::Toasts.Forms.Plugin.Droid.Resource.Id.image = global::AppXam.Droid.Resource.Id.image;
+			global::Toasts.Forms.Plugin.Droid.Resource.Id.title = global::AppXam.Droid.Resource.Id.title;
+			global::Toasts.Forms.Plugin.Droid.Resource.Layout.crouton = global::AppXam.Droid.Resource.Layout.crouton;
+			global::Toasts.Forms.Plugin.Droid.Resource.String.ApplicationName = global::AppXam.Droid.Resource.String.ApplicationName;
+			global::Toasts.Forms.Plugin.Droid.Resource.String.Hello = global::AppXam.Droid.Resource.String.Hello;
 			global::XLabs.Forms.Resource.Color.calendar_active_month_bg = global::AppXam.Droid.Resource.Color.calendar_active_month_bg;
 			global::XLabs.Forms.Resource.Color.calendar_bg = global::AppXam.Droid.Resource.Color.calendar_bg;
 			global::XLabs.Forms.Resource.Color.calendar_divider = global::AppXam.Droid.Resource.Color.calendar_divider;
@@ -179,40 +191,52 @@ namespace AppXam.Droid
 			public const int document = 2130837508;
 			
 			// aapt resource value: 0x7f020005
-			public const int favorites = 2130837509;
+			public const int error = 2130837509;
 			
 			// aapt resource value: 0x7f020006
-			public const int icon = 2130837510;
+			public const int favorites = 2130837510;
 			
 			// aapt resource value: 0x7f020007
-			public const int monoandroidsplash = 2130837511;
+			public const int icon = 2130837511;
 			
 			// aapt resource value: 0x7f020008
-			public const int myRepo = 2130837512;
+			public const int info = 2130837512;
 			
 			// aapt resource value: 0x7f020009
-			public const int pdf = 2130837513;
+			public const int monoandroidsplash = 2130837513;
 			
 			// aapt resource value: 0x7f02000a
-			public const int recents = 2130837514;
+			public const int myRepo = 2130837514;
 			
 			// aapt resource value: 0x7f02000b
-			public const int search = 2130837515;
+			public const int pdf = 2130837515;
 			
 			// aapt resource value: 0x7f02000c
-			public const int star = 2130837516;
+			public const int recents = 2130837516;
 			
 			// aapt resource value: 0x7f02000d
-			public const int star_unchecked = 2130837517;
+			public const int search = 2130837517;
 			
 			// aapt resource value: 0x7f02000e
-			public const int tasks = 2130837518;
+			public const int star = 2130837518;
 			
 			// aapt resource value: 0x7f02000f
-			public const int user = 2130837519;
+			public const int star_unchecked = 2130837519;
 			
 			// aapt resource value: 0x7f020010
-			public const int xlsx = 2130837520;
+			public const int success = 2130837520;
+			
+			// aapt resource value: 0x7f020011
+			public const int tasks = 2130837521;
+			
+			// aapt resource value: 0x7f020012
+			public const int user = 2130837522;
+			
+			// aapt resource value: 0x7f020013
+			public const int warning = 2130837523;
+			
+			// aapt resource value: 0x7f020014
+			public const int xlsx = 2130837524;
 			
 			static Drawable()
 			{
@@ -227,11 +251,17 @@ namespace AppXam.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f080004
-			public const int calendar_grid = 2131230724;
+			// aapt resource value: 0x7f080006
+			public const int calendar_grid = 2131230726;
 			
 			// aapt resource value: 0x7f080001
 			public const int calendar_view = 2131230721;
+			
+			// aapt resource value: 0x7f080005
+			public const int desc = 2131230725;
+			
+			// aapt resource value: 0x7f080004
+			public const int image = 2131230724;
 			
 			// aapt resource value: 0x7f080003
 			public const int left_arrow = 2131230723;
@@ -262,13 +292,16 @@ namespace AppXam.Droid
 			public const int calendar_picker = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int dialog = 2130903042;
+			public const int crouton = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int month = 2130903043;
+			public const int dialog = 2130903043;
 			
 			// aapt resource value: 0x7f030004
-			public const int week = 2130903044;
+			public const int month = 2130903044;
+			
+			// aapt resource value: 0x7f030005
+			public const int week = 2130903045;
 			
 			static Layout()
 			{

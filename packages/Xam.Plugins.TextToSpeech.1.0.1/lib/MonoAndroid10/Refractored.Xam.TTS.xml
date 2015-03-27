@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Refractored.Xam.TTS</name>
+    </assembly>
+    <members>
+        <member name="T:Refractored.Xam.TTS.CrossTextToSpeech">
+            <summary>
+            Cross platform TTS implemenations
+            </summary>
+        </member>
+        <member name="M:Refractored.Xam.TTS.CrossTextToSpeech.Dispose">
+            <summary>
+            Dispose of TTS, reset lazy load
+            </summary>
+        </member>
+        <member name="P:Refractored.Xam.TTS.CrossTextToSpeech.Current">
+            <summary>
+            Current settings to use
+            </summary>
+        </member>
+        <member name="T:Refractored.Xam.TTS.TextToSpeech">
+            <summary>
+            Text to speech implementation Android
+            </summary>
+        </member>
+        <member name="M:Refractored.Xam.TTS.TextToSpeech.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="M:Refractored.Xam.TTS.TextToSpeech.Init">
+            <summary>
+            Initialize TTS
+            </summary>
+        </member>
+        <member name="M:Refractored.Xam.TTS.TextToSpeech.OnInit(Android.Speech.Tts.OperationResult)">
+            <summary>
+            OnInit of TTS
+            </summary>
+            <param name="status"></param>
+        </member>
+        <member name="M:Refractored.Xam.TTS.TextToSpeech.Speak(System.String,System.Boolean,System.Nullable{Refractored.Xam.TTS.Abstractions.CrossLocale},System.Nullable{System.Single},System.Nullable{System.Single},System.Nullable{System.Single})">
+            <summary>
+            Speak back text
+            </summary>
+            <param name="text">Text to speak</param>
+            <param name="queue">If you want to chain together speak command or cancel current</param>
+            <param name="crossLocale">Locale of voice</param>
+            <param name="pitch">Pitch of voice</param>
+            <param name="speakRate">Speak Rate of voice (All) (0.0 - 2.0f)</param>
+            <param name="volume">Volume of voice (iOS/WP) (0.0-1.0)</param>
+        </member>
+        <member name="M:Refractored.Xam.TTS.TextToSpeech.SetDefaultLanguageLollipop">
+            <summary>
+            In a different method as it can crash on older target/compile for some reason   
+            </summary>
+        </member>
+        <member name="M:Refractored.Xam.TTS.TextToSpeech.GetInstalledLanguages">
+            <summary>
+            Get all installed and valide lanaguages
+            </summary>
+            <returns>List of CrossLocales</returns>
+        </member>
+        <member name="M:Refractored.Xam.TTS.TextToSpeech.GetInstalledLanguagesLollipop">
+            <summary>
+            In a different method as it can crash on older target/compile for some reason
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

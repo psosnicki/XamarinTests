@@ -8,6 +8,6 @@ namespace AppXam
 {
     public interface IHierarchicalStructure
     {
-        public IList<BaseStructure> Childs { get; set; }
+       IList<BaseStructure> Childs { get; set; }
     }
 }

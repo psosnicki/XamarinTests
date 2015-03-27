@@ -1,11 +1,13 @@
 ﻿using Acr.XamForms.Mobile.IO;
 using Autofac;
+using Refractored.Xam.TTS;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Toasts.Forms.Plugin.Abstractions;
 using Xamarin.Forms;
 using XLabs.Forms.Controls;
 using XLabs.Ioc;
@@ -19,18 +21,30 @@ namespace AppXam
     {
         public static IContainer Container { get; set; }
         public static string BaseUrl { get; set; }
-
+        public static int syncCounter=0;
         public bool Synchronize() 
         {
-            Device.BeginInvokeOnMainThread(() => { });
+            Device.BeginInvokeOnMainThread(() => {
+                if (MainPage != null)
+                {
+                    NotifyAsync();
+                    DependencyService.Get<ITextToSpeechService>().Speak("Synchronizing");
+                }
+            });
             return true; 
+        }
+
+        public async Task<bool> NotifyAsync()
+        {
+            var notificator = DependencyService.Get<IToastNotificator>();
+            return await notificator.Notify(ToastNotificationType.Info, "ECM info", "Sync...", TimeSpan.FromSeconds(2));
         }
 
         public void StartSyncTask()
         {
             Task.Factory.StartNew(() => {
 
-                Device.StartTimer(TimeSpan.FromSeconds(5000), Synchronize);
+                Device.StartTimer(TimeSpan.FromSeconds(5), Synchronize);
                 
             }, CancellationToken.None, TaskCreationOptions.DenyChildAttach, TaskScheduler.Default);
         }

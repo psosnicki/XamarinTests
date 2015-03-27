@@ -4,10 +4,13 @@
              xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
              xmlns:local="clr-namespace:AppXam;assembly=AppXam"
              x:Class="AppXam.TasksView">
+
   <StackLayout Orientation="Vertical">
+  <Label Text="{Binding MainPage.Title,Mode=TwoWay}" TextColor="Red" VerticalOptions="Center" HorizontalOptions="Center" />
+    
+    <!--SuggestionItemDataTemplate="{StaticResource SugestionItemTemplate}"-->
     <controls:AutoCompleteView x:Name="autoSearch" Placeholder="Enter text to search"
                            SearchBackgroundColor="White"
-                           SuggestionItemDataTemplate="{StaticResource SugestionItemTemplate}"
                            SelectedCommand="{Binding SuggestionSelectedCmd}"
                            ShowSearch="True"
                            ShowSearchButton="False"

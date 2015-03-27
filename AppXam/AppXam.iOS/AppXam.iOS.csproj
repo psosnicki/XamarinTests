@@ -128,9 +128,21 @@
     <Reference Include="ImageCircle.Forms.Plugin.iOS">
       <HintPath>..\..\packages\Xam.Plugins.Forms.ImageCircle.1.0.10\lib\Xamarin.iOS10\ImageCircle.Forms.Plugin.iOS.dll</HintPath>
     </Reference>
+    <Reference Include="Refractored.Xam.TTS">
+      <HintPath>..\..\packages\Xam.Plugins.TextToSpeech.1.0.1\lib\Xamarin.iOS10\Refractored.Xam.TTS.dll</HintPath>
+    </Reference>
+    <Reference Include="Refractored.Xam.TTS.Abstractions">
+      <HintPath>..\..\packages\Xam.Plugins.TextToSpeech.1.0.1\lib\Xamarin.iOS10\Refractored.Xam.TTS.Abstractions.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
+    <Reference Include="Toasts.Forms.Plugin.Abstractions">
+      <HintPath>..\..\packages\Toasts.Forms.Plugin.1.0.6.18\lib\Xamarin.iOS10\Toasts.Forms.Plugin.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Toasts.Forms.Plugin.iOS">
+      <HintPath>..\..\packages\Toasts.Forms.Plugin.1.0.6.18\lib\Xamarin.iOS10\Toasts.Forms.Plugin.iOS.dll</HintPath>
+    </Reference>
     <Reference Include="Xamarin.Forms.Core">
       <HintPath>..\..\packages\Xamarin.Forms.1.4.0.6341\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
     </Reference>

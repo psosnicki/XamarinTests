@@ -14,6 +14,8 @@ using ImageCircle.Forms.Plugin.Droid;
 using XLabs.Platform.Device;
 using XLabs.Platform.Services;
 using XLabs.Ioc;
+using Toasts.Forms.Plugin.Droid;
+using Refractored.Xam.TTS;
 
 
 [assembly: ExportRenderer(typeof(LinearPage), typeof(LinearPageRenderer))]
@@ -41,6 +43,8 @@ namespace AppXam.Droid
             App.BaseUrl = @"file:///android_asset/";
             base.OnCreate(bundle);
             global::Xamarin.Forms.Forms.Init(this, bundle);
+            ToastNotificatorImplementation.Init();
+           // CrossTextToSpeech.Current.Init();
             ImageCircleRenderer.Init();
             LoadApplication(new App());
         }

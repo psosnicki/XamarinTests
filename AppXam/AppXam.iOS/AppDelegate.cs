@@ -5,6 +5,7 @@ using System.Linq;
 using Foundation;
 using UIKit;
 using ImageCircle.Forms.Plugin.iOS;
+using Toasts.Forms.Plugin.iOS;
 
 namespace AppXam.iOS
 {
@@ -24,6 +25,7 @@ namespace AppXam.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+            ToastNotificatorImplementation.Init();
             ImageCircleRenderer.Init();
             LoadApplication(new App());
 
