@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AppXam;assembly=AppXam"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             x:Class="AppXam.App">
+  <Application.Resources>
+    <ResourceDictionary>
+      <Color x:Key="EcmThemeColor">White</Color>
+      <Color x:Key="MenuFontColor">#FF006293</Color>
+      <Color x:Key="AppBarColor">#FF272727</Color>
+      <Color x:Key="MainColor">#FF006092</Color>
+      <Color x:Key="GreenThemeColor">#FFADC300</Color>
+
+      <!--<Style x:Key="ECMThemeStyle" TargetType="Label">
+        <Setter Property="TextColor" Value="Green" />
+      </Style>-->
+
+
+
+      <DataTemplate x:Key="StandardMenuItemTemplate" >
+
+        <StackLayout Orientation="Horizontal" Padding="2">
+          <Image VerticalOptions="Center" HeightRequest="48" WidthRequest="48"  Source="{Binding ImageSource}"></Image>
+          <Label VerticalOptions="Center" Text="{Binding Title}"/>
+        </StackLayout>
+        <!--<ImageCell ImageSource="{Binding ImageSource}" Text="{Binding Title}" >
+        </ImageCell>-->
+      </DataTemplate>
+
+      <DataTemplate x:Key="TaskMenuItemTemplate">
+ 
+        <StackLayout Orientation="Horizontal" Padding="2">
+          <Image VerticalOptions="Center" HeightRequest="48" WidthRequest="48" Source="{Binding ImageSource}"></Image>
+          <Label VerticalOptions="Center" Text="{Binding Title}"/>
+          <controls:ImageButton  BackgroundColor="Transparent" Font="Medium" Source="flame32.png" Text="10"/>
+          <controls:ImageButton  BackgroundColor="Transparent" Font="Medium" Grid.Column="1" Source="overdue32.png" Text="5"/>
+          <controls:ImageButton  BackgroundColor="Transparent" Font="Medium" Grid.Column="2" Source="tasknormal32.png" Text="2"/>
+          
+            <!--<Grid>
+              <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+              </Grid.ColumnDefinitions>
+              <controls:ImageButton  BackgroundColor="Transparent" Source="flame32.png" Text="10"/>
+              <controls:ImageButton  BackgroundColor="Transparent" Grid.Column="1" Source="overdue32.png" Text="5"/>
+              <controls:ImageButton  BackgroundColor="Transparent" Grid.Column="2" Source="tasknormal32.png" Text="2"/>
+            </Grid>-->
+        </StackLayout>
+
+      </DataTemplate>
+
+
+      <local:MenuItemTemplateSelector x:Key="MenuItemTemplateSelector" TasksItem="{StaticResource TaskMenuItemTemplate}" NormalItem="{StaticResource StandardMenuItemTemplate}"/>
+    </ResourceDictionary>
+  </Application.Resources>
+
+</Application>

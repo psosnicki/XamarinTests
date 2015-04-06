@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AppXam;assembly=AppXam"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             x:Class="AppXam.IndexesView">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <DataTemplate x:Key="DateTimeField">
+        <Grid>
+            <!--<DatePicker Date="" />-->
+        </Grid>
+      </DataTemplate>
+
+      <local:IndexFieldTemplateSelector x:Key="IndexFieldTemplateSelector"/>
+    </ResourceDictionary>
+
+
+  </ContentPage.Resources>
+  <StackLayout Orientation="Vertical" Padding="5">
+    
+ 
+    <Label Text="Fill Indexes" Font="Large" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="Center" />
+    
+    <local:ExtendedListView x:Name="lstIndexes" HasUnevenRows="true" ItemTemplateSelector="{StaticResource IndexFieldTemplateSelector}"/>
+
+    <controls:ImageButton Source="ok.png" HorizontalOptions="CenterAndExpand" BackgroundColor="{StaticResource GreenThemeColor}" Orientation="ImageToRight" TextColor="White" Text="Archive" />
+  </StackLayout>
+</ContentPage>

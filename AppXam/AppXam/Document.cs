@@ -11,5 +11,11 @@ namespace AppXam
     public class Document : BaseStructure
     {
         public string DocumentClassName { get; set; }
+        public IList<IndexField> Indexes { get; set; }
+
+        public Document()
+        {
+            Indexes = new List<IndexField>();
+        }
     }
 }

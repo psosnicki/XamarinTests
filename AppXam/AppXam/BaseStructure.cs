@@ -10,6 +10,7 @@ namespace AppXam
 {
     public class BaseStructure : INotifyPropertyChanged
     {
+
         private bool _isFavorite;
         public bool IsFavorite
         {
@@ -28,10 +29,15 @@ namespace AppXam
         public string LastModified { get { return ModifiedDate.ToString(); } }
         public DateTime ModifiedDate { get; set; }
         public string Extension { get; set; }
-
+        public bool AreDetailsVisible { get; set; }
         public string ImgSource { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
+
+        public BaseStructure()
+        {
+            AreDetailsVisible = true;
+        }
 
         void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {

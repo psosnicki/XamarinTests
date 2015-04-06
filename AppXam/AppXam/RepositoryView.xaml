@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:AppXam;assembly=AppXam"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             x:Class="AppXam.RepositoryView">
+  <StackLayout>
+
+    <!--<controls:AutoCompleteView x:Name="autoSearch" Placeholder="Enter text to search"
+                               SearchBackgroundColor="White"
+                               SuggestionItemDataTemplate="{StaticResource SugestionItemTemplate}"
+                               SelectedCommand="{Binding SuggestionSelectedCmd}"
+                               ShowSearch="True"
+                               ShowSearchButton="False"
+                               Suggestions="{Binding Suggestions,Mode=TwoWay}" >
+    </controls:AutoCompleteView>-->
+    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+
+      <!--<controls:ImageButton BackgroundColor="{StaticResource GreenThemeColor}" Command="{Binding GoUpCmd}" HorizontalOptions="Start" Text="Up" Source="prev.png" Orientation="ImageToLeft" />-->
+      <!--<Image HorizontalOptions="Start" Source="prev.png"/>-->
+      <Label HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"  TextColor="Green" Font="Large" FontAttributes="Bold" Text="{Binding CurrentPath,Mode=TwoWay}"/>
+      <!--<controls:ImageButton Command="{Binding GoUpCmd}" HorizontalOptions="End" Text="" Source="next.png" Orientation="ImageOnTop" />-->
+      <!--<Image HorizontalOptions="End" Source="next.png"/>-->
+    </StackLayout>
+    <local:InfiniteListView x:Name="lvFoundDocs" ItemsSource="{Binding Structures}" HasUnevenRows="true"  SelectedItem="{Binding CurrentSelectedItem}" ItemTappedCommand="{Binding ItemSelectedCmd}" LoadMoreCommand="{Binding LoadItemsCmd}" >
+      <local:InfiniteListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <ViewCell.View>
+              <local:StructureView/>
+            </ViewCell.View>
+          </ViewCell>
+        </DataTemplate>
+      </local:InfiniteListView.ItemTemplate>
+    </local:InfiniteListView>
+    <ActivityIndicator IsRunning="{Binding IsLoading,Mode=TwoWay}" Color="Green"  VerticalOptions="CenterAndExpand"
+               HorizontalOptions="CenterAndExpand" IsVisible="{Binding IsLoading,Mode=TwoWay}"/>
+  
+    <StackLayout Padding="10" Orientation="Horizontal" Spacing="2">
+      <controls:ImageButton HorizontalOptions="CenterAndExpand" BackgroundColor="{StaticResource GreenThemeColor}" Text="Cancel" TextColor="White" Source="cancel.png" Orientation="ImageToLeft" />
+      <controls:ImageButton HorizontalOptions="CenterAndExpand" BackgroundColor="{StaticResource GreenThemeColor}" Text="Confirm" Source="ok.png" TextColor="White" Orientation="ImageToRight"/>
+      <!--<Image HorizontalOptions="Start" Source="cancel.png"/>
+      <Image HorizontalOptions="End" Source="ok.png"/>-->
+    </StackLayout>
+  </StackLayout>
+</ContentPage>

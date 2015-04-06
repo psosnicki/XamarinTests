@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Media.Plugin</name>
+    </assembly>
+    <members>
+        <member name="T:Media.Plugin.CrossMedia">
+            <summary>
+            Cross platform Media implemenations
+            </summary>
+        </member>
+        <member name="P:Media.Plugin.CrossMedia.Current">
+            <summary>
+            Current settings to use
+            </summary>
+        </member>
+    </members>
+</doc>

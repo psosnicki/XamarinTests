@@ -18,6 +18,7 @@ namespace AppXam
         {
             _taskRepository = taskRepository;
             Tasks = new ObservableCollection<EcmTask>();
+            LoadTasks();
         }
 
         private async void LoadTasks()
@@ -36,9 +37,15 @@ namespace AppXam
 
         private async Task<IList<EcmTask>> GetUserTasks()
         {
-            await Task.Delay(2000);
+            await Task.Delay(3000);
             return await Task.Run<IList<EcmTask>>(() => {
-                return new List<EcmTask> { new EcmTask{ Name="task1"} };
+                return new List<EcmTask> { 
+                    
+                    new EcmTask{ TaskName="task1 invoice", WorkflowName="Invoice workflow2", EndDate =DateTime.Now, StartDate = DateTime.Now },
+                    new EcmTask{ TaskName="task2 invoice", WorkflowName="Invoice workflow3", EndDate =DateTime.Now.AddDays(1), StartDate = DateTime.Now },
+                    new EcmTask{ TaskName="task3 invoice", WorkflowName="Invoice workflow1", EndDate =DateTime.Now.AddDays(3), StartDate = DateTime.Now },
+                    new EcmTask{ TaskName="task4 invoice", WorkflowName="Invoice workflow2", EndDate =DateTime.Now.AddDays(2), StartDate = DateTime.Now }
+                };
             });
         }
     }

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:local="clr-namespace:AppXam;assembly=AppXam"
+                  xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+                  x:Class="AppXam.MainMasterPage" >
+
+  <MasterDetailPage.Master>
+    <ContentPage Title="Menu">
+ 
+      <StackLayout Orientation="Vertical" Padding="0,4,0,0"  BackgroundColor="{StaticResource MainColor}">
+        <Image VerticalOptions="Center" Source="comarchlogo.png" Aspect="AspectFit"/>
+        <!--<Grid>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+          </Grid.ColumnDefinitions>
+
+          <Label BackgroundColor="#FF006093" Grid.Column="0" TextColor="White" FontAttributes="Bold" Font="Large" Text="Comarch"/>
+          <Label BackgroundColor="#FFABC200" Grid.Column="1" TextColor="White" FontAttributes="Bold" Font="Large" Text="ECM"/>
+        </Grid>-->
+        
+        <!--<StackLayout Orientation="Horizontal" Spacing="0" Padding="0" HorizontalOptions="FillAndExpand">
+          <Label BackgroundColor="#FF006093" TextColor="White" FontAttributes="Bold" Font="Large" Text="Comarch"/>
+          <Label BackgroundColor="#FFABC200" TextColor="White" FontAttributes="Bold" Font="Large" Text="ECM"/>
+        </StackLayout>-->
+        
+        
+        <local:ExtendedListView ItemTemplateSelector="{StaticResource MenuItemTemplateSelector}" BackgroundColor="White" ItemsSource="{Binding MenuItems}" ItemTappedCommand="{Binding ItemSelectedCmd}" SelectedItem="{Binding CurrentSelectedItem}" VerticalOptions="FillAndExpand" HasUnevenRows="true">
+          <!--<ListView.ItemTemplate>
+            <DataTemplate>
+              <ImageCell ImageSource="{Binding ImageSource}" Text="{Binding Title}" >
+              </ImageCell>
+            </DataTemplate>
+          </ListView.ItemTemplate>-->
+        </local:ExtendedListView>
+
+      
+      </StackLayout>
+    </ContentPage>
+  </MasterDetailPage.Master>
+</MasterDetailPage>

@@ -1,0 +1,217 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Media.Plugin.Abstractions</name>
+    </assembly>
+    <members>
+        <member name="T:Media.Plugin.Abstractions.IMedia">
+            <summary>
+            Interface for Media
+            </summary>
+        </member>
+        <member name="M:Media.Plugin.Abstractions.IMedia.PickPhotoAsync">
+            <summary>
+            Picks a photo from the default gallery
+            </summary>
+            <returns>Media file or null if canceled</returns>
+        </member>
+        <member name="M:Media.Plugin.Abstractions.IMedia.TakePhotoAsync(Media.Plugin.Abstractions.StoreCameraMediaOptions)">
+            <summary>
+            Take a photo async with specified options
+            </summary>
+            <param name="options">Camera Media Options</param>
+            <returns>Media file of photo or null if canceled</returns>
+        </member>
+        <member name="M:Media.Plugin.Abstractions.IMedia.PickVideoAsync">
+            <summary>
+            Picks a video from the default gallery
+            </summary>
+            <returns>Media file of video or null if canceled</returns>
+        </member>
+        <member name="M:Media.Plugin.Abstractions.IMedia.TakeVideoAsync(Media.Plugin.Abstractions.StoreVideoOptions)">
+            <summary>
+            Take a video with specified options
+            </summary>
+            <param name="options">Video Media Options</param>
+            <returns>Media file of new video or null if canceled</returns>
+        </member>
+        <member name="P:Media.Plugin.Abstractions.IMedia.IsCameraAvailable">
+            <summary>
+            Gets if a camera is available on the device
+            </summary>
+        </member>
+        <member name="P:Media.Plugin.Abstractions.IMedia.IsTakePhotoSupported">
+            <summary>
+            Gets if ability to take photos supported on the device
+            </summary>
+        </member>
+        <member name="P:Media.Plugin.Abstractions.IMedia.IsPickPhotoSupported">
+            <summary>
+            Gets if the ability to pick photo is supported on the device
+            </summary>
+        </member>
+        <member name="P:Media.Plugin.Abstractions.IMedia.IsTakeVideoSupported">
+            <summary>
+            Gets if ability to take video is supported on the device
+            </summary>
+        </member>
+        <member name="P:Media.Plugin.Abstractions.IMedia.IsPickVideoSupported">
+            <summary>
+            Gets if the ability to pick a video is supported on the device
+            </summary>
+        </member>
+        <member name="T:Media.Plugin.Abstractions.MediaExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Media.Plugin.Abstractions.MediaExtensions.VerifyOptions(Media.Plugin.Abstractions.StoreMediaOptions)">
+            <summary>
+            
+            </summary>
+            <param name="self"></param>
+        </member>
+        <member name="M:Media.Plugin.Abstractions.MediaExtensions.GetFilePath(Media.Plugin.Abstractions.StoreMediaOptions,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="self"></param>
+            <param name="rootPath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Media.Plugin.Abstractions.MediaExtensions.GetUniqueFilepath(Media.Plugin.Abstractions.StoreMediaOptions,System.String,System.Func{System.String,System.Boolean})">
+            <summary>
+            
+            </summary>
+            <param name="self"></param>
+            <param name="rootPath"></param>
+            <param name="checkExists"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Media.Plugin.Abstractions.MediaFile">
+            <summary>
+            Media file representations
+            </summary>
+        </member>
+        <member name="M:Media.Plugin.Abstractions.MediaFile.#ctor(System.String,System.Func{System.IO.Stream},System.Boolean,System.Action{System.Boolean})">
+            <summary>
+            Constructor
+            </summary>
+            <param name="path"></param>
+            <param name="streamGetter"></param>
+            <param name="deletePathOnDispose"></param>
+            <param name="dispose"></param>
+        </member>
+        <member name="M:Media.Plugin.Abstractions.MediaFile.GetStream">
+            <summary>
+            Get stream if available
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Media.Plugin.Abstractions.MediaFile.Dispose">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Media.Plugin.Abstractions.MediaFile.Finalize">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Media.Plugin.Abstractions.MediaFile.Path">
+            <summary>
+            Path to file
+            </summary>
+        </member>
+        <member name="P:Media.Plugin.Abstractions.MediaFileNotFoundException.Path">
+            <summary>
+            Path
+            </summary>
+        </member>
+        <member name="T:Media.Plugin.Abstractions.StoreMediaOptions">
+            <summary>
+            Media Options
+            </summary>
+        </member>
+        <member name="M:Media.Plugin.Abstractions.StoreMediaOptions.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Media.Plugin.Abstractions.StoreMediaOptions.Directory">
+            <summary>
+            Directory name
+            </summary>
+        </member>
+        <member name="P:Media.Plugin.Abstractions.StoreMediaOptions.Name">
+            <summary>
+            File name
+            </summary>
+        </member>
+        <member name="T:Media.Plugin.Abstractions.CameraDevice">
+            <summary>
+            Camera device
+            </summary>
+        </member>
+        <member name="F:Media.Plugin.Abstractions.CameraDevice.Rear">
+            <summary>
+            Back of device
+            </summary>
+        </member>
+        <member name="F:Media.Plugin.Abstractions.CameraDevice.Front">
+            <summary>
+            Front facing of device
+            </summary>
+        </member>
+        <member name="T:Media.Plugin.Abstractions.StoreCameraMediaOptions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Media.Plugin.Abstractions.StoreCameraMediaOptions.DefaultCamera">
+            <summary>
+            Default camera
+            </summary>
+        </member>
+        <member name="T:Media.Plugin.Abstractions.VideoQuality">
+            <summary>
+            Video quality
+            </summary>
+        </member>
+        <member name="F:Media.Plugin.Abstractions.VideoQuality.Low">
+            <summary>
+            Low
+            </summary>
+        </member>
+        <member name="F:Media.Plugin.Abstractions.VideoQuality.Medium">
+            <summary>
+            Medium
+            </summary>
+        </member>
+        <member name="F:Media.Plugin.Abstractions.VideoQuality.High">
+            <summary>
+            High
+            </summary>
+        </member>
+        <member name="T:Media.Plugin.Abstractions.StoreVideoOptions">
+            <summary>
+            Store Video options
+            </summary>
+        </member>
+        <member name="M:Media.Plugin.Abstractions.StoreVideoOptions.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="P:Media.Plugin.Abstractions.StoreVideoOptions.DesiredLength">
+            <summary>
+            Desired Length
+            </summary>
+        </member>
+        <member name="P:Media.Plugin.Abstractions.StoreVideoOptions.Quality">
+            <summary>
+            Desired Quality
+            </summary>
+        </member>
+    </members>
+</doc>

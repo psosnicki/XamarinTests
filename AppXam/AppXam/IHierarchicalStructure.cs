@@ -9,5 +9,6 @@ namespace AppXam
     public interface IHierarchicalStructure
     {
        IList<BaseStructure> Childs { get; set; }
+       IHierarchicalStructure Parent { get; set; }
     }
 }

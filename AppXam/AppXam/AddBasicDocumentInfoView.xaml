@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             xmlns:local="clr-namespace:AppXam;assembly=AppXam"
+             x:Class="AppXam.AddBasicDocumentInfoView" Title="Adding camera capture">
+  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+  <Grid Padding="0,5,0,0">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="42"/>
+    </Grid.RowDefinitions>
+
+    <Grid Grid.Row="0" Padding="4">
+
+      
+       <StackLayout VerticalOptions="FillAndExpand">
+        <Grid Padding="0,2,0,5" HorizontalOptions="Center">
+          <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+            <Label Font="Medium" Text="Adding file to:"/>
+            <Label Font="Medium" Text="home/My mobile"/>
+            <Frame BackgroundColor="#FFB3C800" Padding="5,2,5,2">
+              <Label Font="Medium" HorizontalOptions="Center" TextColor="White" Text="Edit"/>
+            </Frame>
+          </StackLayout>
+   
+        </Grid> 
+  
+      <!--<Grid.RowDefinitions>
+        <RowDefinition Height="*"/>
+        <RowDefinition Height="*"/>
+      </Grid.RowDefinitions>-->
+      
+      <Grid  Padding="10" VerticalOptions="FillAndExpand">
+        <Frame BackgroundColor="White" >
+          <Image Source="flame128.png" Aspect="AspectFit" />
+        </Frame>
+      </Grid>
+
+      <StackLayout  VerticalOptions="End" Orientation="Vertical" Spacing="6" Padding="10">
+        <Label Text="Document name" TextColor="Black"/>
+        <Frame BackgroundColor="White" Padding="6">
+            <controls:ExtendedEntry Placeholder="Enter name" PlaceholderTextColor="Gray"/>
+        </Frame>
+        <Label Text="Document class" TextColor="Black"/>
+        <Frame BackgroundColor="White" Padding="6">
+          <local:BindablePicker x:Name="bpClasses" ItemsSource="{Binding DocClasses}" Title="Choose class" />
+        </Frame>
+      </StackLayout>
+           </StackLayout> 
+    </Grid>
+
+
+    <Grid Grid.Row="1" BackgroundColor="{StaticResource AppBarColor}">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
+      <controls:ImageButton Source="prev.png" Text="Previous" Grid.Column="1" HorizontalOptions="Center"  Orientation="ImageToLeft" Command="{Binding GoPrevCmd}" TextColor="White" BackgroundColor="{StaticResource GreenThemeColor}" />
+      <controls:ImageButton Source="next.png" Text="Go Next" Grid.Column="1" HorizontalOptions="Center"  Orientation="ImageToRight" Command="{Binding GoNextCmd}" TextColor="White" BackgroundColor="{StaticResource GreenThemeColor}" />
+
+
+    </Grid>
+
+  </Grid>
+</ContentPage>

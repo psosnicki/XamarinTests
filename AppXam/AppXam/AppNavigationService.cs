@@ -11,6 +11,11 @@ namespace AppXam
     {
         public INavigation Navi { get; internal set; }
 
+        public AppNavigationService()
+        {
+           
+        }
+
         public void InsertPageBefore(Page page, Page before)
         {
             Navi.InsertPageBefore(page, before);

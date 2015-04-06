@@ -9,6 +9,7 @@ namespace AppXam
     public class Dossier : BaseStructure, IHierarchicalStructure
     {
         public IList<BaseStructure> Childs { get; set; }
+        public IHierarchicalStructure Parent { get; set; }
 
         public Dossier()
         {

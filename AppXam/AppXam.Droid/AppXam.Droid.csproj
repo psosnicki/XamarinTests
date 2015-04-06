@@ -72,6 +72,12 @@
     <Reference Include="ImageCircle.Forms.Plugin.Android">
       <HintPath>..\..\packages\Xam.Plugins.Forms.ImageCircle.1.0.10\lib\MonoAndroid10\ImageCircle.Forms.Plugin.Android.dll</HintPath>
     </Reference>
+    <Reference Include="Media.Plugin">
+      <HintPath>..\..\packages\Xam.Plugin.Media.1.0.0\lib\MonoAndroid10\Media.Plugin.dll</HintPath>
+    </Reference>
+    <Reference Include="Media.Plugin.Abstractions">
+      <HintPath>..\..\packages\Xam.Plugin.Media.1.0.0\lib\MonoAndroid10\Media.Plugin.Abstractions.dll</HintPath>
+    </Reference>
     <Reference Include="Mono.Android" />
     <Reference Include="Mono.Android.Export" />
     <Reference Include="mscorlib" />
@@ -168,6 +174,26 @@
     <AndroidResource Include="Resources\drawable\user.png" />
     <AndroidResource Include="Resources\drawable\addNew.png" />
     <AndroidResource Include="Resources\drawable\recents.png" />
+    <AndroidResource Include="Resources\drawable\falme128checked.png" />
+    <AndroidResource Include="Resources\drawable\flame128.png" />
+    <AndroidResource Include="Resources\drawable\overdue.png" />
+    <AndroidResource Include="Resources\drawable\tasknormal.png" />
+    <AndroidResource Include="Resources\drawable\flame32.png" />
+    <AndroidResource Include="Resources\drawable\overdue32.png" />
+    <AndroidResource Include="Resources\drawable\tasknormal32.png" />
+    <AndroidResource Include="Resources\drawable\handMenu.png" />
+    <AndroidResource Include="Resources\drawable\masterDetailMenu.png" />
+    <AndroidResource Include="Resources\drawable\comarchlogo.png" />
+    <AndroidResource Include="Resources\drawable\capture.png" />
+    <AndroidResource Include="Resources\drawable\next.png" />
+    <AndroidResource Include="Resources\drawable\prev.png" />
+    <AndroidResource Include="Resources\drawable\dossier.png" />
+    <AndroidResource Include="Resources\drawable\folder.png" />
+    <AndroidResource Include="Resources\drawable\ok.png" />
+    <AndroidResource Include="Resources\drawable\cancel.png" />
+    <AndroidResource Include="Resources\drawable\back.png" />
+    <AndroidResource Include="Resources\drawable\notvalid.png" />
+    <AndroidResource Include="Resources\drawable\valid.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AppXam\AppXam.csproj">

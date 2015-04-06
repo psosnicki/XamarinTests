@@ -31,18 +31,17 @@
     <BoxView Grid.Row="1" Color="#e6e8e5" />
     <BoxView Grid.Row="2" Color="#3A444D" />-->
 
-    <!--  title  -->
-    <Label FontSize="Large" HorizontalOptions="Center" Text="MY SPRINGBOARD"
-           TextColor="White" VerticalOptions="Center" />
+    <StackLayout VerticalOptions="FillAndExpand" Padding="0,4,0,0" Orientation="Vertical">
+          <Image VerticalOptions="Center" Source="comarchlogo.png" Aspect="AspectFit"/>
+   
 
 
-  
+
+    
     <!--  inner grid for button layouts  -->
-    <Grid Grid.Row="1" ColumnSpacing="1" 
+    <Grid  ColumnSpacing="1" VerticalOptions="FillAndExpand"
           RowSpacing="8" >
       <Grid.RowDefinitions>
-
-        
         <RowDefinition Height="*"/>
         <RowDefinition Height="*" />
         <RowDefinition Height="*" />
@@ -54,18 +53,76 @@
         <ColumnDefinition Width="*" />
       </Grid.ColumnDefinitions>
 
-
+      <!--<BoxView BackgroundColor="Black">
+         <Label FontSize="Large" FontAttributes="Bold" HorizontalOptions="Center" Text="COMARCH ECM" TextColor="White" VerticalOptions="Center" />
+      </BoxView>
+      <BoxView Grid.Column="1" BackgroundColor="Black">
+         
+      </BoxView>-->
+      
       <Grid Grid.Row="0" Grid.Column="0" HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="White">
-          <StackLayout  HorizontalOptions="Center" VerticalOptions="Center" Orientation="Vertical" BackgroundColor="White">
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" Padding="0" Spacing="40">
+
+
+
+          <StackLayout  VerticalOptions="CenterAndExpand" Orientation="Vertical" BackgroundColor="White">
             <RelativeLayout >
               <Image Source="tasks.png" HeightRequest="60" WidthRequest="60"  />
 
-    
-              <Frame RelativeLayout.XConstraint="60"  BackgroundColor="Green" RelativeLayout.YConstraint="0"   Padding="4,1,4,1">
-                  <Label Font="Medium" HorizontalOptions="Center"  TextColor="White" Text="12"/>
+
+              <Frame RelativeLayout.XConstraint="-10"  BackgroundColor="Green" RelativeLayout.YConstraint="0"   Padding="4,1,4,1">
+                <Label Font="Medium" HorizontalOptions="Center"  TextColor="White" Text="18"/>
               </Frame>
             </RelativeLayout>
-            <Label HorizontalOptions="Center" FontAttributes="Bold" Text="Tasks"/>
+
+            <Label HorizontalOptions="Center" FontAttributes="Bold" TextColor="{StaticResource MenuFontColor}" Text="Tasks"/>
+          </StackLayout>
+
+          <!--#FF757575-->
+
+
+
+
+          <Grid HorizontalOptions="End">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="*"/>
+              <RowDefinition Height="*"/>
+              <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <!--<Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+          </Grid.ColumnDefinitions>-->
+
+            <!--<controls:ImageButton Text="10" BackgroundColor="Transparent" Source="flame32.png" />
+          <controls:ImageButton Grid.Row="1" BackgroundColor="Transparent"  Text="5" Source="overdue32.png" />
+          <controls:ImageButton Grid.Row="2" BackgroundColor="Transparent" Text="3" Source="tasknormal32.png" />-->
+
+
+            <StackLayout Padding="0" Spacing="1" VerticalOptions="Center" Orientation="Horizontal">
+              <Image Aspect="AspectFit" BackgroundColor="Transparent"  Source="flame32.png" />
+              <Label VerticalOptions="Center" Font="Medium" Text="10"/>
+            </StackLayout>
+
+
+            <StackLayout Grid.Row="1" Padding="0" Spacing="1" VerticalOptions="Center" Orientation="Horizontal">
+              <Image Aspect="AspectFit" BackgroundColor="Transparent"  Grid.Column="1" Source="overdue32.png" />
+              <Label VerticalOptions="Center" Font="Medium" Text="5"/>
+            </StackLayout>
+
+
+            <StackLayout Grid.Row="2" Padding="0" Spacing="1" VerticalOptions="Center" Orientation="Horizontal">
+
+              <Image Aspect="AspectFit" BackgroundColor="Transparent" Grid.Column="2" Source="tasknormal32.png" />
+              <Label VerticalOptions="Center" Font="Medium" Text="3"/>
+            </StackLayout>
+
+
+
+
+          </Grid>
         </StackLayout>
       </Grid>
 
@@ -73,18 +130,18 @@
       <Grid Grid.Row="0" Grid.Column="2"  HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="White">
         <StackLayout  Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="White">
           <Image Source="search.png"   HeightRequest="60" WidthRequest="60" />
-          <Label HorizontalOptions="Center" FontAttributes="Bold" Text="Search"/>
+          <Label HorizontalOptions="Center" FontAttributes="Bold" TextColor="{StaticResource MenuFontColor}" Text="Search"/>
         </StackLayout>
       </Grid>
 
       <Grid Grid.Row="1" Grid.Column="0"  HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="White">
         <StackLayout  Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center"  BackgroundColor="White">
           <Image Source="favorites.png"   HeightRequest="60" WidthRequest="60" />
-          <Label HorizontalOptions="Center" FontAttributes="Bold" Text="Favorites"/>
+          <Label HorizontalOptions="Center" FontAttributes="Bold" TextColor="{StaticResource MenuFontColor}" Text="Favorites"/>
         </StackLayout>
       </Grid>
-      
-      
+
+
       <BoxView BackgroundColor="Gray" Grid.Row="1" Grid.Column="1"/>
       <!--<BoxView BackgroundColor="Gray" Grid.Column="1"/>-->
       <BoxView BackgroundColor="Gray" Grid.Row="2" Grid.Column="1"/>
@@ -93,7 +150,7 @@
       <Grid Grid.Row="1" Grid.Column="2"  HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="White">
         <StackLayout  Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center"  BackgroundColor="White">
           <Image Source="myRepo.png"   HeightRequest="60" WidthRequest="60" />
-          <Label HorizontalOptions="Center" FontAttributes="Bold" Text="Repository"/>
+          <Label HorizontalOptions="Center" FontAttributes="Bold" TextColor="{StaticResource MenuFontColor}" Text="Repository"/>
         </StackLayout>
       </Grid>
 
@@ -101,33 +158,50 @@
 
       <Grid Grid.Row="2" Grid.Column="0"  HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="White">
         <StackLayout  Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center"  BackgroundColor="White">
-          <Image Source="addNew.png"   HeightRequest="60" WidthRequest="60" />
-          <Label HorizontalOptions="Center" FontAttributes="Bold" Text="New document"/>
+          <Image Source="addNew.png"   HeightRequest="60" WidthRequest="60">
+            <Image.GestureRecognizers>
+              <TapGestureRecognizer Tapped="OnMenuItemTapped" />
+            </Image.GestureRecognizers>
+          </Image>
+          <Label HorizontalOptions="Center" FontAttributes="Bold" TextColor="{StaticResource MenuFontColor}" Text="New document"/>
+   
         </StackLayout>
+        <Grid.GestureRecognizers>
+           <TapGestureRecognizer Tapped="OnMenuItemTapped" />
+        </Grid.GestureRecognizers>
       </Grid>
 
 
       <Grid Grid.Row="2" Grid.Column="2"  HorizontalOptions="Fill" VerticalOptions="Fill" BackgroundColor="White">
         <StackLayout  Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center"  BackgroundColor="White">
-          <Image Source="recents.png"   HeightRequest="60" WidthRequest="60"  />
-          <Label HorizontalOptions="Center" FontAttributes="Bold" Text="Recents"/>
+          <Image Source="recents.png"   HeightRequest="60" WidthRequest="60">
+            <Image.GestureRecognizers>
+              <TapGestureRecognizer Tapped="OnMenuItemTapped" />
+            </Image.GestureRecognizers>
+          </Image>
+          <Label HorizontalOptions="Center" FontAttributes="Bold" TextColor="{StaticResource MenuFontColor}" Text="Recents"/>
+        
+          <StackLayout.GestureRecognizers>
+              <TapGestureRecognizer Tapped="OnMenuItemTapped" />
+          </StackLayout.GestureRecognizers>
         </StackLayout>
       </Grid>
 
 
-       
-          <controls:ImageButton Grid.Row="3" Grid.Column="0" HorizontalOptions="FillAndExpand"  Text="Simple" BackgroundColor="#97c7c9" TextColor="#ffffff"  Source="star_unchecked.png" Orientation="ImageToLeft"  />
-          <controls:ImageButton Grid.Row="3" Grid.Column="2" HorizontalOptions="FillAndExpand"  Text="Details" BackgroundColor="#97c7c9" TextColor="#ffffff"  Source="star_unchecked.png" Orientation="ImageToLeft"  />
-  
-      
-      
-    
-      
+      <!--<Image Grid.Row="3" HeightRequest="30" WidthRequest="30"  Grid.Column="0" HorizontalOptions="CenterAndExpand" BackgroundColor="#97c7c9"  Source="handMenu.png" />
+      <Image  Grid.Row="3" HeightRequest="30" WidthRequest="30" Grid.Column="2" HorizontalOptions="CenterAndExpand"  BackgroundColor="#97c7c9"   Source="masterDetailMenu.png" />-->
+
+      <controls:ImageButton Grid.Row="3" Grid.Column="0" HorizontalOptions="CenterAndExpand" Text="Simple" BackgroundColor="Transparent" TextColor="#ffffff"  Source="handMenu.png" Orientation="ImageToLeft"  />
+      <controls:ImageButton Grid.Row="3" Grid.Column="2" HorizontalOptions="CenterAndExpand" Clicked="OnMasterDetailClicked"  Text="Details" BackgroundColor="Transparent" TextColor="#ffffff"  Source="masterDetailMenu.png" Orientation="ImageToLeft"  />
+
+
+
+
+
     </Grid>
-  <!--</Grid>-->
+    <!--</Grid>-->
 
-
-
+ </StackLayout>
 
 
 

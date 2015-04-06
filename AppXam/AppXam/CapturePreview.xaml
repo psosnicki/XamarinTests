@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             x:Class="AppXam.CapturePreview">
+  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
+
+  <Grid Padding="4">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*"/>
+      <RowDefinition Height="50"/>
+    </Grid.RowDefinitions>
+    
+    <Image x:Name="imgFile" Source="{Binding ImgSource,Mode=TwoWay}" Grid.Row="0" Aspect="AspectFit"/>
+
+    <Grid Grid.Row="1" Padding="5">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
+      
+
+      <controls:ImageButton Source="capture.png" Text="Capture again"  Orientation="ImageToLeft" HorizontalOptions="Center" Command="{Binding CaptureCmd}" TextColor="White" BackgroundColor="{StaticResource GreenThemeColor}" />
+      <controls:ImageButton Source="next.png" Text="Go Next" Grid.Column="1" HorizontalOptions="Center"  Orientation="ImageToRight" Command="{Binding GoNextCmd}" TextColor="White" BackgroundColor="{StaticResource GreenThemeColor}" />
+
+
+      <!--<Image HorizontalOptions="Center" Source="capture.png"/>
+      <Image HorizontalOptions="Center" Grid.Column="1"  Source="next.png"/>-->
+
+      <!--<StackLayout Orientation="Vertical">
+        <Image HorizontalOptions="Center"   Source="capture.png"/>
+        <Label Text="New Capture" TextColor="Black" Font="Medium" BackgroundColor="Transparent"/>
+      </StackLayout>
+      <StackLayout Orientation="Vertical" Grid.Column="1">
+        <Image  HorizontalOptions="Center"  Source="next.png"/>
+        <Label Text="Next" TextColor="Black" Font="Medium" BackgroundColor="Transparent"/>
+      </StackLayout>-->
+
+      <!--<controls:ImageButton HorizontalOptions="Center" VerticalOptions="FillAndExpand" BackgroundColor="Transparent" Orientation="ImageOnTop" Opacity="0.7" Source="capture.png"/>
+      <controls:ImageButton HorizontalOptions="Center" VerticalOptions="FillAndExpand" BackgroundColor="Transparent" Grid.Column="1" Orientation="ImageOnTop" Opacity="0.7" Source="next.png"/>-->
+
+    </Grid>
+  </Grid>
+  
+</ContentPage>

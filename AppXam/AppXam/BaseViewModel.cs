@@ -5,10 +5,11 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using XLabs.Forms.Mvvm;
 
 namespace AppXam
 {
-    public class BaseViewModel : INotifyPropertyChanged
+    public class BaseViewModel : ViewModel, INotifyPropertyChanged
     {
         private bool _isLoading;
         public bool IsLoading

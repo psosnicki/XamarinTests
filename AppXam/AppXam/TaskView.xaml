@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppXam.TaskView">
+  <Grid Padding="2">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="*"/>
+      <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
+
+    <StackLayout Orientation="Vertical" HorizontalOptions="StartAndExpand">
+      <Label Text="{Binding TaskName}" TextColor="#FF1BBF9C" FontAttributes="Bold" Font="Large"/>
+      <Label Text="{Binding WfNameStartDate}" HorizontalOptions="StartAndExpand" Font="Small"/>
+    </StackLayout>
+
+    <StackLayout Grid.Column="1" HorizontalOptions="End" Orientation="Vertical"  VerticalOptions="Center" >
+      <Label Font="Small" Text="{Binding EndDate,StringFormat='{0:d/M/yyyy}'}" />
+      <Image x:Name="imgTaskTimeStatus" HeightRequest="22" WidthRequest="22" />
+    </StackLayout>
+    
+
+  </Grid>
+  
+  
+</ContentView>

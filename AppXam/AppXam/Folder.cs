@@ -9,11 +9,15 @@ namespace AppXam
     public class Folder : BaseStructure , IHierarchicalStructure
     {
         public IList<BaseStructure> Childs { get; set; }
+        public IHierarchicalStructure Parent { get; set; }
         
         public Folder()
         {
             ImgSource = "folder.png";
             Childs = new List<BaseStructure>();
         }
+
+
+
     }
 }

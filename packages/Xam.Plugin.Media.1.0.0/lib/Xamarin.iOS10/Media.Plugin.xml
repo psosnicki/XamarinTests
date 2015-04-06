@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Media.Plugin</name>
+    </assembly>
+    <members>
+        <member name="T:Media.Plugin.MediaImplementation">
+            <summary>
+            Implementation for Media
+            </summary>
+        </member>
+        <member name="F:Media.Plugin.MediaImplementation.TypeImage">
+            <summary>
+            image type
+            </summary>
+        </member>
+        <member name="F:Media.Plugin.MediaImplementation.TypeMovie">
+            <summary>
+            movie type
+            </summary>
+        </member>
+        <member name="M:Media.Plugin.MediaImplementation.#ctor">
+            <summary>
+            Implementation
+            </summary>
+        </member>
+        <member name="M:Media.Plugin.MediaImplementation.GetPickPhotoUI">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Media.Plugin.MediaImplementation.PickPhotoAsync">
+            <summary>
+            Picks a photo from the default gallery
+            </summary>
+            <returns>Media file or null if canceled</returns>
+        </member>
+        <member name="M:Media.Plugin.MediaImplementation.GetTakePhotoUI(Media.Plugin.Abstractions.StoreCameraMediaOptions)">
+            <summary>
+            
+            </summary>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Media.Plugin.MediaImplementation.TakePhotoAsync(Media.Plugin.Abstractions.StoreCameraMediaOptions)">
+            <summary>
+            Take a photo async with specified options
+            </summary>
+            <param name="options">Camera Media Options</param>
+            <returns>Media file of photo or null if canceled</returns>
+        </member>
+        <member name="M:Media.Plugin.MediaImplementation.GetPickVideoUI">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Media.Plugin.MediaImplementation.PickVideoAsync">
+            <summary>
+            Picks a video from the default gallery
+            </summary>
+            <returns>Media file of video or null if canceled</returns>
+        </member>
+        <member name="M:Media.Plugin.MediaImplementation.GetTakeVideoUI(Media.Plugin.Abstractions.StoreVideoOptions)">
+            <summary>
+            
+            </summary>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Media.Plugin.MediaImplementation.TakeVideoAsync(Media.Plugin.Abstractions.StoreVideoOptions)">
+            <summary>
+            Take a video with specified options
+            </summary>
+            <param name="options">Video Media Options</param>
+            <returns>Media file of new video or null if canceled</returns>
+        </member>
+        <member name="P:Media.Plugin.MediaImplementation.IsCameraAvailable">
+            <inheritdoc/>
+        </member>
+        <member name="P:Media.Plugin.MediaImplementation.IsTakePhotoSupported">
+            <inheritdoc/>
+        </member>
+        <member name="P:Media.Plugin.MediaImplementation.IsPickPhotoSupported">
+            <inheritdoc/>
+        </member>
+        <member name="P:Media.Plugin.MediaImplementation.IsTakeVideoSupported">
+            <inheritdoc/>
+        </member>
+        <member name="P:Media.Plugin.MediaImplementation.IsPickVideoSupported">
+            <inheritdoc/>
+        </member>
+        <member name="T:Media.Plugin.MediaPickerController">
+            <summary>
+            Media Picker Controller
+            </summary>
+        </member>
+        <member name="M:Media.Plugin.MediaPickerController.GetResultAsync">
+            <summary>
+            Gets result of picker
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:Media.Plugin.MediaPickerController.Delegate">
+            <summary>
+            Deleage
+            </summary>
+        </member>
+        <member name="T:Media.Plugin.CrossMedia">
+            <summary>
+            Cross platform Media implemenations
+            </summary>
+        </member>
+        <member name="P:Media.Plugin.CrossMedia.Current">
+            <summary>
+            Current settings to use
+            </summary>
+        </member>
+    </members>
+</doc>

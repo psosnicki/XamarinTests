@@ -4,23 +4,57 @@
              xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
              xmlns:local="clr-namespace:AppXam;assembly=AppXam"
              x:Class="AppXam.TasksView">
-
+<ContentPage.Resources>
+  <ResourceDictionary>
+      <DataTemplate x:Key="TaskItemTemplate">
+        <ViewCell >
+          <ViewCell.View>
+            <local:TaskView/>
+          </ViewCell.View>
+        </ViewCell>
+      </DataTemplate>
+    </ResourceDictionary>
+</ContentPage.Resources>
   <StackLayout Orientation="Vertical">
   <Label Text="{Binding MainPage.Title,Mode=TwoWay}" TextColor="Red" VerticalOptions="Center" HorizontalOptions="Center" />
     
-    <!--SuggestionItemDataTemplate="{StaticResource SugestionItemTemplate}"-->
-    <controls:AutoCompleteView x:Name="autoSearch" Placeholder="Enter text to search"
-                           SearchBackgroundColor="White"
-                           SelectedCommand="{Binding SuggestionSelectedCmd}"
-                           ShowSearch="True"
-                           ShowSearchButton="False"
-                           Suggestions="{Binding Suggestions,Mode=TwoWay}" >
-    </controls:AutoCompleteView>
 
-    <local:InfiniteListView x:Name="lvFoundDocs" ItemsSource="{Binding FoundDocuments}"  SelectedItem="{Binding CurrentSelectedItem}" ItemTappedCommand="{Binding ItemSelectedCmd}" LoadMoreCommand="{Binding LoadItemsCmd}" />
-    <StackLayout Orientation="Horizontal" >
-      <controls:ImageButton  HorizontalOptions="FillAndExpand" Text="Test" BackgroundColor="#97c7c9" TextColor="#ffffff"  Source="star_unchecked.png" Orientation="ImageOnTop"  />
-      <controls:ImageButton  HorizontalOptions="FillAndExpand" Text="Test" BackgroundColor="#97c7c9" TextColor="#ffffff"  Source="star_unchecked.png" Orientation="ImageOnTop"  />
-    </StackLayout>
+      <!--SuggestionItemDataTemplate="{StaticResource SugestionItemTemplate}"-->
+      <controls:AutoCompleteView x:Name="autoSearch" Placeholder="Search ECM task"
+                             SearchBackgroundColor="White"
+                             SelectedCommand="{Binding SuggestionSelectedCmd}"
+                             ShowSearch="True"
+                             ShowSearchButton="False"
+                             Suggestions="{Binding Suggestions,Mode=TwoWay}" >
+      </controls:AutoCompleteView>
+ 
+    <ActivityIndicator BackgroundColor="Transparent" Color="#FF1BBF9C" IsRunning="{Binding IsLoading,Mode=TwoWay}" IsVisible="{Binding IsLoading,Mode=TwoWay}"/>
+    <local:InfiniteListView x:Name="lvFoundDocs" HasUnevenRows="True" ItemsSource="{Binding Tasks}"  ItemTemplate="{StaticResource TaskItemTemplate}" SelectedItem="{Binding TaskItemTemplate}" ItemTappedCommand="{Binding ItemSelectedCmd}" LoadMoreCommand="{Binding LoadItemsCmd}" />
+  
+    
+    <Grid BackgroundColor="{StaticResource EcmThemeColor}" Padding="0" ColumnSpacing="0" RowSpacing="1">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="42" />
+
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="*"/>
+      </Grid.ColumnDefinitions>
+
+
+      <Image Grid.Column="0" Grid.Row="0"  BackgroundColor="#FF272727" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Source="falme128checked.png"/>
+      <Image Grid.Column="1" Grid.Row="0"  BackgroundColor="#FF272727" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Source="overdue.png"/>
+      <Image Grid.Column="2" Grid.Row="0"  BackgroundColor="#FF272727" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Source="tasknormal.png"/>
+      
+      
+      <!--<controls:ImageButton Grid.Column="0"  HorizontalOptions="FillAndExpand" ImageWidthRequest="48" ImageHeightRequest="48" BorderRadius="0" BorderWidth="0" FontSize="Small"  BackgroundColor="#97c7c9" TextColor="#ffffff"  Source="flame128.png" Orientation="ImageOnTop"  />
+      <controls:ImageButton Grid.Column="1" HorizontalOptions="FillAndExpand" ImageWidthRequest="48" ImageHeightRequest="48" BorderRadius="0" BorderWidth="0"  FontSize="Small" Text="Deadline" BackgroundColor="#97c7c9" TextColor="#ffffff"  Source="flame128.png" Orientation="ImageOnTop"  />
+      <controls:ImageButton Grid.Column="2" HorizontalOptions="FillAndExpand" ImageWidthRequest="48" ImageHeightRequest="48" BorderRadius="0"  BorderWidth="0" FontSize="Small" Text="All" BackgroundColor="#97c7c9" TextColor="#ffffff"  Source="flame128.png" Orientation="ImageOnTop"  />-->
+
+    </Grid>
+    
+
   </StackLayout>
 </ContentPage>

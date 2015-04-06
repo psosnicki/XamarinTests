@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:XLabs.Forms.Controls;assembly=XLabs.Forms"
+             x:Class="AppXam.StructureView">
+
+
+  <Grid Padding="2">
+
+
+    <Grid.RowDefinitions>
+      <RowDefinition Height="40"></RowDefinition>
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+
+      <ColumnDefinition Width="32"></ColumnDefinition>
+      <ColumnDefinition Width="32"></ColumnDefinition>
+      <ColumnDefinition Width="*"></ColumnDefinition>
+      <ColumnDefinition Width="22"></ColumnDefinition>
+
+    </Grid.ColumnDefinitions>
+
+    <controls:CheckBox />
+    <Image x:Name="img" Grid.Row="0" Grid.Column="1"  Aspect="AspectFit"/>
+    <StackLayout Spacing="1" Grid.Column="2" Orientation="Vertical">
+      <Label Text="{Binding DisplayName}" TextColor="Green" Font="Large"></Label>
+      <StackLayout Orientation="Horizontal" IsVisible="{Binding AreDetailsVisible}" >
+        <Label Text="{Binding Childs.Count,StringFormat='Files {0}'}" Font="Small"/>
+        <Label Text="{Binding LastModified,StringFormat='Modified on {0}'}" Font="Small" />
+      </StackLayout>
+    </StackLayout>
+
+    <!--<Image x:Name="imgFavorite" Grid.Column="2" Aspect="AspectFit">
+      <Image.GestureRecognizers>
+        <TapGestureRecognizer Tapped="OnFavoriteTapped" />
+      </Image.GestureRecognizers>
+    </Image>-->
+    <!--<Grid Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center"  Grid.Column="2">
+        <Grid.GestureRecognizers>
+          <TapGestureRecognizer Tapped="OnFavoriteTapped" />
+        </Grid.GestureRecognizers>
+       
+        -->
+    <!--<Image x:Name="imgStarOutline" Source="icon.png" />-->
+    <!--
+        -->
+    <!--<Image x:Name="imgStarSelected" IsVisible="{Binding IsFavorite,Mode=TwoWay}" Source="icon.png"/>-->
+    <!--
+      </Grid>-->
+
+  </Grid>
+
+</ContentView>
